@@ -1,0 +1,17 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+import BottomNav from './BottomNav';
+
+export default function BottomNavWrapper() {
+    const pathname = usePathname();
+
+    // Hide bottom nav on login and onboarding pages
+    const hideNav = pathname === '/login' || pathname === '/onboarding' || pathname === '/register';
+
+    if (hideNav) {
+        return null;
+    }
+
+    return <BottomNav />;
+}
