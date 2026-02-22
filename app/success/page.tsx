@@ -39,7 +39,7 @@ export default function Success() {
                 </div>
                 <div className="flex justify-between items-center">
                     <span className="text-sm text-slate-400">Amount Paid</span>
-                    <span className="text-xl font-bold text-primary">$35.00</span>
+                    <span className="text-xl font-bold text-primary">€35.00</span>
                 </div>
             </div>
 

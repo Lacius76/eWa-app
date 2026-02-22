@@ -43,8 +43,8 @@ export default function BottomNav() {
               </div>
               <span
                 className={`text-[11px] font-medium ${isActive
-                    ? 'text-primary font-semibold'
-                    : 'text-slate-400 group-hover:text-white'
+                  ? 'text-primary font-semibold'
+                  : 'text-slate-400 group-hover:text-white'
                   }`}
               >
                 {item.label}

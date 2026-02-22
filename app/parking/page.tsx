@@ -1,12 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { motion, useDragControls, PanInfo } from 'framer-motion';
 
 export default function Parking() {
     const [isExpanded, setIsExpanded] = useState(true);
+    const dragControls = useDragControls();
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const onDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+        // If dragged more than 50px, toggle state
+        if (info.offset.y > 50 && isExpanded) {
+            setIsExpanded(false);
+        } else if (info.offset.y < -50 && !isExpanded) {
+            setIsExpanded(true);
+        }
+    };
+
     return (
-        <div className="relative flex h-screen w-full flex-col overflow-hidden">
+        <div className="relative flex h-screen w-full flex-col overflow-hidden overscroll-none touch-none" ref={containerRef}>
             {/* Map Background Layer - Real Google Maps */}
             <div className="absolute inset-0 z-0 bg-gray-900">
                 <div className="relative w-full h-full overflow-hidden">
@@ -70,9 +83,21 @@ export default function Parking() {
             </div>
 
             {/* Main Content Area - Bottom Sheet Modal */}
-            <div
-                className={`absolute bottom-0 left-0 right-0 z-20 flex flex-col justify-end pb-20 transition-transform duration-300 ease-out ${isExpanded ? 'translate-y-0' : 'translate-y-[calc(100%-200px)]'
-                    }`}
+            <motion.div
+                className="absolute bottom-0 left-0 right-0 z-20 flex flex-col justify-end pb-0"
+                initial={false}
+                animate={isExpanded ? "expanded" : "collapsed"}
+                variants={{
+                    expanded: { y: 0 },
+                    collapsed: { y: "calc(100% - 200px)" }
+                }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                drag="y"
+                dragControls={dragControls}
+                dragListener={false} // Only drag using the handle
+                dragConstraints={{ top: 0, bottom: 0 }} // Constraints are relative to the animated position
+                dragElastic={0.05} // Minimal elasticity to feel solid but not revealing
+                onDragEnd={onDragEnd}
             >
                 {/* Location Button (Floating above sheet) */}
                 <div className={`flex justify-end px-4 mb-4 transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
@@ -82,16 +107,17 @@ export default function Parking() {
                 </div>
 
                 {/* Bottom Sheet Container */}
-                <div className="w-full bg-surface-dark rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t border-white/5 pb-8 relative overflow-hidden">
-                    {/* Drag Handle - Clickable to toggle */}
+                <div className="w-full bg-surface-dark rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.5)] border-t border-white/5 pb-8 relative overflow-hidden h-[85vh]">
+                    {/* Drag Handle - Clickable to toggle & Draggable */}
                     <div
+                        onPointerDown={(e) => dragControls.start(e)}
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="w-full flex justify-center pt-3 pb-1 cursor-pointer active:bg-white/5 transition-colors"
+                        className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing active:bg-white/5 transition-colors touch-none"
                     >
                         <div className="w-12 h-1.5 rounded-full bg-white/20" />
                     </div>
 
-                    <div className={`px-6 pt-4 transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-60'}`}>
+                    <div className="px-6 pt-4 h-full overflow-y-auto no-scrollbar padding-bottom-safe overscroll-contain touch-pan-y">
                         {/* Header Section */}
                         <div className="flex justify-between items-start mb-2">
                             <div>
@@ -103,8 +129,8 @@ export default function Parking() {
                                         <span className="material-symbols-outlined text-[14px]">directions_car</span> 50 spots
                                     </span>
                                 </div>
-                                <h1 className="text-2xl font-bold text-white tracking-tight">Zone A - Downtown</h1>
-                                <p className="text-primary/80 text-sm font-medium mt-0.5">123 Main St, Financial District</p>
+                                <h1 className="text-2xl font-bold text-white tracking-tight">Zone A - Mariahilf</h1>
+                                <p className="text-primary/80 text-sm font-medium mt-0.5">Mariahilfer Str. 1, 1060 Wien</p>
                             </div>
                             <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 text-white/70 hover:bg-white/10 transition-colors">
                                 <span className="material-symbols-outlined">favorite</span>
@@ -119,10 +145,10 @@ export default function Parking() {
                             <div className="bg-background-dark/50 rounded-xl p-3 border border-white/5 flex flex-col justify-center">
                                 <span className="text-xs text-white/50 mb-1">Rate</span>
                                 <div className="flex items-baseline gap-1">
-                                    <span className="text-2xl font-bold text-white">$2.50</span>
+                                    <span className="text-2xl font-bold text-white">€2.50</span>
                                     <span className="text-sm text-white/50">/ hr</span>
                                 </div>
-                                <span className="text-[10px] text-primary mt-1">Daily max $20.00</span>
+                                <span className="text-[10px] text-primary mt-1">Daily max €20.00</span>
                             </div>
                             <div className="bg-background-dark/50 rounded-xl p-3 border border-white/5 flex flex-col justify-center">
                                 <span className="text-xs text-white/50 mb-1">Distance</span>
@@ -173,16 +199,18 @@ export default function Parking() {
                         </div>
 
                         {/* Main CTA */}
-                        <button className="w-full h-14 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 shadow-neon group relative overflow-hidden">
+                        <Link
+                            href="/parking-payment"
+                            className="w-full h-14 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 shadow-neon group relative overflow-hidden mb-24"
+                        >
                             <span className="material-symbols-outlined text-background-dark font-bold group-hover:rotate-12 transition-transform">
                                 local_parking
                             </span>
                             <span className="text-background-dark text-lg font-bold tracking-tight">Start Parking</span>
-                        </button>
-                        <div className="h-6 w-full" />
+                        </Link>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }

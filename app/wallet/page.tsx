@@ -7,6 +7,7 @@ export default function Wallet() {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
+    const [activeCardIndex, setActiveCardIndex] = useState(0);
 
     const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
         if (!scrollRef.current) return;
@@ -59,22 +60,30 @@ export default function Wallet() {
                 {/* Balance Section */}
                 <div className="px-6 pt-4 pb-2 text-center">
                     <p className="text-sm text-gray-400 font-medium tracking-wide uppercase">Total Balance</p>
-                    <h2 className="text-4xl font-bold text-white mt-1 tracking-tight">$14,230.50</h2>
+                    <h2 className="text-4xl font-bold text-white mt-1 tracking-tight">€14,230.50</h2>
                 </div>
 
                 {/* Cards Carousel - Swipeable */}
-                <div className="mt-6 px-6 pb-8">
+                <div className="mt-6 pb-2">
                     <div
                         ref={scrollRef}
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
                         onMouseMove={handleMouseMove}
-                        className={`overflow-x-auto snap-x snap-mandatory no-scrollbar ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+                        onScroll={() => {
+                            if (scrollRef.current) {
+                                const scrollPosition = scrollRef.current.scrollLeft;
+                                const cardWidth = 280 + 16; // width + gap
+                                const newIndex = Math.round(scrollPosition / cardWidth);
+                                setActiveCardIndex(newIndex);
+                            }
+                        }}
+                        className={`overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-pl-6 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
                     >
-                        <div className="flex gap-4 pb-2">
+                        <div className="flex gap-4 pb-4 px-6 w-max">
                             {/* Card 1 - Visa Debit */}
-                            <div className="snap-center shrink-0 w-[300px] h-[190px] rounded-2xl bg-gradient-to-br from-accent/60 to-surface-dark/80 p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-white/10 transform transition-transform hover:scale-[1.02] cursor-pointer group">
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/60 to-surface-dark/80 p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-white/10 transform transition-transform hover:scale-[1.02] cursor-pointer group">
                                 <div className="flex justify-between items-start">
                                     <span className="text-white/80 font-medium text-sm tracking-widest">Debit</span>
                                     <span className="material-symbols-outlined text-white/90" style={{ fontSize: '28px' }}>
@@ -100,7 +109,7 @@ export default function Wallet() {
                             </div>
 
                             {/* Card 2 - Mastercard Credit */}
-                            <div className="snap-center shrink-0 w-[300px] h-[190px] rounded-2xl bg-gradient-to-br from-surface-highlight to-surface-dark p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-white/10 transform transition-transform hover:scale-[1.02] cursor-pointer group">
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-surface-highlight to-surface-dark p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-white/10 transform transition-transform hover:scale-[1.02] cursor-pointer group">
                                 <div className="flex justify-between items-start">
                                     <span className="text-white/80 font-medium text-sm tracking-widest">Credit</span>
                                     <span className="material-symbols-outlined text-white/90" style={{ fontSize: '28px' }}>
@@ -126,15 +135,24 @@ export default function Wallet() {
                             </div>
 
                             {/* Card 3 - Add New Card */}
-                            <div className="snap-center shrink-0 w-[300px] h-[190px] rounded-2xl border-2 border-dashed border-gray-600 hover:border-primary/70 flex flex-col items-center justify-center text-gray-400 hover:text-primary transition-all cursor-pointer bg-surface-dark/30 hover:bg-surface-dark/50 group">
+                            <div className="snap-start shrink-0 w-[140px] h-[178px] rounded-2xl border-2 border-dashed border-gray-600 hover:border-primary/70 flex flex-col items-center justify-center text-gray-400 hover:text-primary transition-all cursor-pointer bg-surface-dark/30 hover:bg-surface-dark/50 group">
                                 <div className="flex flex-col items-center gap-3">
-                                    <div className="h-16 w-16 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all">
-                                        <span className="material-symbols-outlined text-5xl text-primary group-hover:scale-110 transition-transform">add</span>
+                                    <div className="h-14 w-14 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all">
+                                        <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">add</span>
                                     </div>
-                                    <span className="text-base font-semibold">Add New Card</span>
+                                    <span className="text-sm font-semibold text-center leading-tight px-2">Add New<br />Card</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    {/* Pagination Dots */}
+                    <div className="flex justify-center gap-2 mt-4 mb-4">
+                        {[0, 1, 2].map((index) => (
+                            <div
+                                key={index}
+                                className={`h-2 rounded-full transition-all duration-300 ${activeCardIndex === index ? 'w-6 bg-primary' : 'w-2 bg-white/20'}`}
+                            />
+                        ))}
                     </div>
                 </div>
 
@@ -184,10 +202,10 @@ export default function Wallet() {
                     </div>
                     <div className="px-4 space-y-2">
                         {[
-                            { icon: 'movie', name: 'Netflix Subscription', time: 'Today, 09:41 AM', amount: '- $15.99', color: 'text-primary' },
-                            { icon: 'directions_car', name: 'Uber Ride', time: 'Yesterday, 8:30 PM', amount: '- $24.50', color: 'text-primary' },
-                            { icon: 'account_balance_wallet', name: 'Salary Deposit', time: 'Oct 24, 10:00 AM', amount: '+ $3,200.00', color: 'text-emerald-400' },
-                            { icon: 'coffee', name: 'Starbucks Coffee', time: 'Oct 23, 08:15 AM', amount: '- $5.40', color: 'text-primary' },
+                            { icon: 'movie', name: 'Netflix Subscription', time: 'Today, 09:41 AM', amount: '- €15.99', color: 'text-primary' },
+                            { icon: 'directions_car', name: 'Uber Ride', time: 'Yesterday, 8:30 PM', amount: '- €24.50', color: 'text-primary' },
+                            { icon: 'account_balance_wallet', name: 'Salary Deposit', time: 'Oct 24, 10:00 AM', amount: '+ €3,200.00', color: 'text-emerald-400' },
+                            { icon: 'coffee', name: 'Starbucks Coffee', time: 'Oct 23, 08:15 AM', amount: '- €5.40', color: 'text-primary' },
                         ].map((tx, i) => (
                             <div
                                 key={i}

@@ -1,11 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Dashboard() {
   return (
     <>
       {/* Header Section */}
-      <header className="sticky top-0 z-30 flex items-center justify-between px-6 pt-12 pb-4 bg-background-dark/90 backdrop-blur-md">
+      <header className="sticky top-0 z-30 flex items-center justify-between px-6 pt-4 pb-4 bg-background-dark/90 backdrop-blur-md">
         <div className="flex flex-col">
           <span className="text-sm font-medium text-gray-400">Welcome back</span>
           <h1 className="text-2xl font-bold tracking-tight text-white">Hello, Laszlo</h1>
@@ -35,7 +34,7 @@ export default function Dashboard() {
       {/* Main Content */}
       <main className="flex-1 px-4 pb-24">
         {/* Balance Card */}
-        <div className="relative mt-2 overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-dark p-6 shadow-xl shadow-primary/20">
+        <div className="relative mt-0 overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-accent to-primary-dark p-6 shadow-xl shadow-primary/20">
           {/* Abstract Background Shapes */}
           <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-black/10 blur-2xl" />
@@ -43,7 +42,7 @@ export default function Dashboard() {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-slate-100 text-sm font-medium mb-1 opacity-90">Total Balance</p>
-                <h2 className="text-4xl font-bold text-white tracking-tight">$12,450.00</h2>
+                <h2 className="text-4xl font-bold text-white tracking-tight">€12,450.00</h2>
                 <div className="mt-2 flex items-center gap-1 text-emerald-300 bg-emerald-900/30 w-fit px-2 py-0.5 rounded-full text-xs font-semibold">
                   <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>
                     trending_up
@@ -83,7 +82,7 @@ export default function Dashboard() {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="mt-4 grid grid-cols-2 gap-4 auto-rows-[minmax(140px,auto)]">
+        <div className="mt-4 grid grid-cols-2 gap-2 auto-rows-auto">
           {/* Primary Large Tile: Parking */}
           <Link
             href="/parking"
@@ -135,7 +134,10 @@ export default function Dashboard() {
           </Link>
 
           {/* Tile: Mobile Ticket */}
-          <div className="col-span-1 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-col justify-between group h-44 transition-transform active:scale-[0.98] cursor-pointer">
+          <Link
+            href="/tickets"
+            className="col-span-1 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-col justify-between group h-44 transition-transform active:scale-[0.98] cursor-pointer"
+          >
             <div className="flex justify-between items-start">
               <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
@@ -150,10 +152,13 @@ export default function Dashboard() {
               <h4 className="text-base font-bold text-white">Mobile Ticket</h4>
               <p className="text-xs text-gray-400 mt-1">Bus &amp; Train</p>
             </div>
-          </div>
+          </Link>
 
           {/* Wide Tile: Insurance */}
-          <div className="col-span-2 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-row items-center justify-between group h-24 transition-transform active:scale-[0.98] cursor-pointer">
+          <Link
+            href="/insurance"
+            className="col-span-2 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-row items-center justify-between group h-24 transition-transform active:scale-[0.98]"
+          >
             <div className="flex items-center gap-4">
               <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-rose-500/10 text-rose-500 group-hover:bg-rose-500 group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>
@@ -162,7 +167,7 @@ export default function Dashboard() {
               </div>
               <div className="flex flex-col">
                 <h4 className="text-base font-bold text-white">Insurance</h4>
-                <p className="text-xs text-gray-400">Health &amp; Auto coverage</p>
+                <p className="text-xs text-gray-400">Auto &amp; Home coverage</p>
               </div>
             </div>
             <div className="h-8 w-8 rounded-full bg-white/5 flex items-center justify-center">
@@ -170,9 +175,9 @@ export default function Dashboard() {
                 chevron_right
               </span>
             </div>
-          </div>
+          </Link>
 
-          {/* Wide Tile: Cheque Payment */}
+          {/* Wide Tile: Wallet */}
           <Link
             href="/wallet"
             className="col-span-2 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-row items-center justify-between group h-24 transition-transform active:scale-[0.98]"
@@ -186,6 +191,29 @@ export default function Dashboard() {
               <div className="flex flex-col">
                 <h4 className="text-base font-bold text-white">My Wallet</h4>
                 <p className="text-xs text-gray-400">Cards &amp; Transactions</p>
+              </div>
+            </div>
+            <div className="h-8 w-8 rounded-full bg-white/5 flex items-center justify-center">
+              <span className="material-symbols-outlined text-gray-400" style={{ fontSize: '20px' }}>
+                chevron_right
+              </span>
+            </div>
+          </Link>
+
+          {/* Wide Tile: Tickets */}
+          <Link
+            href="/tickets"
+            className="col-span-2 relative overflow-hidden rounded-3xl bg-surface-dark p-5 shadow-sm ring-1 ring-white/10 flex flex-row items-center justify-between group h-24 transition-transform active:scale-[0.98]"
+          >
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>
+                  local_activity
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <h4 className="text-base font-bold text-white">Tickets</h4>
+                <p className="text-xs text-gray-400">Cinema, Concerts &amp; Theater</p>
               </div>
             </div>
             <div className="h-8 w-8 rounded-full bg-white/5 flex items-center justify-center">

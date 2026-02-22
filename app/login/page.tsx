@@ -25,11 +25,11 @@ export default function Login() {
     const handleSignIn = (e: React.FormEvent) => {
         e.preventDefault();
         // For demo, auto-navigate to onboarding
-        router.push('/onboarding');
+        router.push('/');
     };
 
     return (
-        <div className="relative flex h-screen w-full flex-col overflow-hidden">
+        <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background-dark">
             {/* Abstract Background Pattern */}
             <div className="absolute inset-0 pointer-events-none z-0 opacity-30">
                 <svg width="100%" height="100%" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
@@ -39,7 +39,7 @@ export default function Login() {
             </div>
 
             {/* Main Content Container */}
-            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-12 pb-8 justify-between sm:justify-center">
+            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-12 pb-8 justify-between sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
                 {/* Header Section */}
                 <div className="flex flex-col items-center justify-center pt-8 pb-10">
                     {/* Logo Icon */}
@@ -49,6 +49,7 @@ export default function Login() {
                         </span>
                     </div>
                     <h1 className="text-primary tracking-tight text-4xl font-extrabold leading-tight text-center">eWa</h1>
+                    <p className="text-primary/80 text-lg font-semibold mt-1">Electronic Wallet</p>
                     <p className="text-slate-400 text-sm font-medium mt-2">Welcome back to the future of finance</p>
                 </div>
 

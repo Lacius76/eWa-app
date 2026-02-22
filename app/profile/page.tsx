@@ -7,7 +7,7 @@ export default function Profile() {
 
     const handleLogout = () => {
         // For demo, navigate back to login
-        router.push('/login');
+        router.push('/splash');
     };
 
     return (
