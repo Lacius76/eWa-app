@@ -58,7 +58,7 @@ export default function EntertainmentTickets() {
             <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
                 <div className="flex items-center justify-between px-4 h-14">
                     <Link
-                        href="/"
+                        href="/dashboard"
                         className="flex items-center justify-center w-10 h-10 -ml-2 rounded-full active:bg-black/10 dark:active:bg-white/10 text-text-primary transition-colors"
                     >
                         <span className="material-symbols-outlined !text-[28px]">chevron_left</span>

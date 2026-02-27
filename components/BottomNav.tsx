@@ -10,7 +10,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { href: '/', icon: 'home', label: 'Home' },
+  { href: '/dashboard', icon: 'home', label: 'Home' },
   { href: '/wallet', icon: 'account_balance_wallet', label: 'Wallet' },
   { href: '/parking', icon: 'local_parking', label: 'Parking' },
   { href: '/profile', icon: 'person', label: 'Profile' },

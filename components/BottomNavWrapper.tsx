@@ -7,7 +7,7 @@ export default function BottomNavWrapper() {
     const pathname = usePathname();
 
     // Hide bottom nav on login and onboarding pages
-    const hideNav = pathname === '/login' || pathname === '/onboarding' || pathname === '/register' || pathname === '/splash';
+    const hideNav = pathname === '/' || pathname === '/login' || pathname === '/onboarding' || pathname === '/register' || pathname === '/splash';
 
     if (hideNav) {
         return null;

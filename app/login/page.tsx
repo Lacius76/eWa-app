@@ -25,7 +25,7 @@ export default function Login() {
     const handleSignIn = (e: React.FormEvent) => {
         e.preventDefault();
         // For demo, auto-navigate to onboarding
-        router.push('/');
+        router.push('/dashboard');
     };
 
     return (

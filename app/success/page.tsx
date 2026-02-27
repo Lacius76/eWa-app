@@ -46,7 +46,7 @@ export default function Success() {
             {/* Action Buttons */}
             <div className="w-full max-w-sm space-y-3">
                 <Link
-                    href="/"
+                    href="/dashboard"
                     className="w-full bg-primary hover:bg-primary-dark text-background font-bold py-4 rounded-xl shadow-neon transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
                 >
                     <span>Back to Home</span>
