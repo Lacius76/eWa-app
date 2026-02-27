@@ -23,8 +23,8 @@ export default function Button({
 
     const variantStyles = {
         primary:
-            'bg-primary hover:bg-primary-dark text-background-dark py-4 rounded-xl shadow-neon',
-        secondary: 'bg-surface-highlight hover:bg-surface-dark text-white py-3 rounded-xl',
+            'bg-primary hover:bg-primary-dark text-background py-4 rounded-xl shadow-neon',
+        secondary: 'bg-surface-highlight hover:bg-surface text-text-primary py-3 rounded-xl',
         ghost: 'text-primary hover:text-primary-dark py-2',
     };
 

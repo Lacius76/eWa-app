@@ -8,13 +8,13 @@ export default function Splash() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            router.push('/login');
+            router.push('/onboarding');
         }, 3000);
         return () => clearTimeout(timer);
     }, [router]);
 
     return (
-        <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-background-dark">
+        <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-background">
 
             {/* Glow background */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -35,7 +35,7 @@ export default function Splash() {
             {/* Logo + text */}
             <div className="relative z-10 flex flex-col items-center gap-6">
                 {/* Logo container */}
-                <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-surface-dark to-background-dark border border-primary/25 shadow-neon flex items-center justify-center">
+                <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-surface to-background border border-primary/25 shadow-neon flex items-center justify-center">
                     <img src="/ewa-icon.svg" alt="eWa" className="w-16 h-16 object-contain" />
                 </div>
 
@@ -44,7 +44,7 @@ export default function Splash() {
                     <h1 className="text-5xl font-extrabold text-primary tracking-tight leading-none">
                         eWa
                     </h1>
-                    <p className="text-slate-300 text-base font-medium mt-2 tracking-wide">
+                    <p className="text-text-secondary text-base font-medium mt-2 tracking-wide">
                         Your Electronic Wallet
                     </p>
                 </div>

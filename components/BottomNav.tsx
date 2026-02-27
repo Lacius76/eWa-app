@@ -20,7 +20,7 @@ export default function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/5 bg-surface-dark/95 backdrop-blur-lg pb-safe">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-surface/95 backdrop-blur-lg pb-safe">
       <div className="mx-auto flex h-20 max-w-md items-center justify-around px-2">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
@@ -31,11 +31,11 @@ export default function BottomNav() {
               className="group flex flex-col items-center justify-center gap-1 w-16"
             >
               <div
-                className={`flex h-8 w-16 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-primary/20' : 'group-hover:bg-white/5'
+                className={`flex h-8 w-16 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-primary/20' : 'group-hover:bg-black/5 dark:group-hover:bg-white/5'
                   }`}
               >
                 <span
-                  className={`material-symbols-outlined text-[24px] ${isActive ? 'text-primary filled' : 'text-slate-400'
+                  className={`material-symbols-outlined text-[24px] ${isActive ? 'text-primary filled' : 'text-text-secondary'
                     }`}
                 >
                   {item.icon}
@@ -44,7 +44,7 @@ export default function BottomNav() {
               <span
                 className={`text-[11px] font-medium ${isActive
                   ? 'text-primary font-semibold'
-                  : 'text-slate-400 group-hover:text-white'
+                  : 'text-text-secondary group-hover:text-text-primary'
                   }`}
               >
                 {item.label}

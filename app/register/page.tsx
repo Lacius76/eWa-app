@@ -38,7 +38,7 @@ export default function Register() {
     };
 
     return (
-        <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background-dark px-6">
+        <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background px-6">
             {/* Wave Background Pattern */}
             <div className="absolute inset-0 overflow-hidden">
                 <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320" fill="none">
@@ -59,9 +59,9 @@ export default function Register() {
             {/* Back Button */}
             <Link
                 href="/login"
-                className="absolute left-6 top-12 flex h-10 w-10 items-center justify-center rounded-full bg-surface-dark/50 backdrop-blur-sm ring-1 ring-white/10 transition-colors hover:bg-surface-dark"
+                className="absolute left-6 top-12 flex h-10 w-10 items-center justify-center rounded-full bg-surface/50 backdrop-blur-sm ring-1 ring-border transition-colors hover:bg-surface"
             >
-                <span className="material-symbols-outlined text-white">arrow_back</span>
+                <span className="material-symbols-outlined text-text-primary">arrow_back</span>
             </Link>
 
             {/* Main Content */}
@@ -71,20 +71,20 @@ export default function Register() {
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 shadow-[0_0_30px_rgba(6,249,249,0.2)]">
                         <span className="material-symbols-outlined text-primary filled" style={{ fontSize: '72px' }}>account_circle</span>
                     </div>
-                    <h1 className="text-3xl font-bold tracking-tight text-white">Create Account</h1>
-                    <p className="mt-2 text-sm text-gray-400">Join eWa and manage everything in one place</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-text-primary">Create Account</h1>
+                    <p className="mt-2 text-sm text-text-secondary">Join eWa and manage everything in one place</p>
                 </div>
 
                 {/* Registration Form */}
                 <form onSubmit={handleRegister} className="space-y-5">
                     {/* Full Name Input */}
                     <div className="space-y-2">
-                        <label htmlFor="fullName" className="block text-sm font-medium text-gray-300">
+                        <label htmlFor="fullName" className="block text-sm font-medium text-text-primary">
                             Full Name
                         </label>
                         <div className="relative">
                             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                                <span className="material-symbols-outlined text-xl text-gray-500">person</span>
+                                <span className="material-symbols-outlined text-xl text-text-secondary">person</span>
                             </div>
                             <input
                                 type="text"
@@ -94,7 +94,7 @@ export default function Register() {
                                 onFocus={handleFullNameFocus}
                                 onClick={handleFullNameFocus}
                                 placeholder="Enter your full name"
-                                className="w-full rounded-xl border border-white/10 bg-surface-dark py-3.5 pl-12 pr-4 text-white placeholder-gray-500 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                className="w-full rounded-xl border border-border bg-surface py-3.5 pl-12 pr-4 text-text-primary placeholder-text-secondary outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                                 required
                             />
                         </div>
@@ -102,12 +102,12 @@ export default function Register() {
 
                     {/* Email Input */}
                     <div className="space-y-2">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+                        <label htmlFor="email" className="block text-sm font-medium text-text-primary">
                             Email Address
                         </label>
                         <div className="relative">
                             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                                <span className="material-symbols-outlined text-xl text-gray-500">mail</span>
+                                <span className="material-symbols-outlined text-xl text-text-secondary">mail</span>
                             </div>
                             <input
                                 type="email"
@@ -117,7 +117,7 @@ export default function Register() {
                                 onFocus={handleEmailFocus}
                                 onClick={handleEmailFocus}
                                 placeholder="your.email@example.com"
-                                className="w-full rounded-xl border border-white/10 bg-surface-dark py-3.5 pl-12 pr-4 text-white placeholder-gray-500 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                className="w-full rounded-xl border border-border bg-surface py-3.5 pl-12 pr-4 text-text-primary placeholder-text-secondary outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                                 required
                             />
                         </div>
@@ -125,12 +125,12 @@ export default function Register() {
 
                     {/* Password Input */}
                     <div className="space-y-2">
-                        <label htmlFor="password" className="block text-sm font-medium text-gray-300">
+                        <label htmlFor="password" className="block text-sm font-medium text-text-primary">
                             Password
                         </label>
                         <div className="relative">
                             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                                <span className="material-symbols-outlined text-xl text-gray-500">lock</span>
+                                <span className="material-symbols-outlined text-xl text-text-secondary">lock</span>
                             </div>
                             <input
                                 type={showPassword ? 'text' : 'password'}
@@ -140,13 +140,13 @@ export default function Register() {
                                 onFocus={handlePasswordFocus}
                                 onClick={handlePasswordFocus}
                                 placeholder="Create a strong password"
-                                className="w-full rounded-xl border border-white/10 bg-surface-dark py-3.5 pl-12 pr-12 text-white placeholder-gray-500 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                className="w-full rounded-xl border border-border bg-surface py-3.5 pl-12 pr-12 text-text-primary placeholder-text-secondary outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                                 required
                             />
                             <button
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
-                                className="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-primary transition-colors"
+                                className="absolute inset-y-0 right-0 flex items-center pr-4 text-text-secondary hover:text-primary transition-colors"
                             >
                                 <span className="material-symbols-outlined text-xl">
                                     {showPassword ? 'visibility_off' : 'visibility'}
@@ -156,16 +156,16 @@ export default function Register() {
                     </div>
 
                     {/* Terms and Privacy Checkboxes */}
-                    <div className="space-y-3 rounded-xl bg-surface-dark/50 p-4 ring-1 ring-white/5">
+                    <div className="space-y-3 rounded-xl bg-surface/50 p-4 ring-1 ring-border">
                         <label className="flex cursor-pointer items-start gap-3">
                             <input
                                 type="checkbox"
                                 checked={agreeTerms}
                                 onChange={(e) => setAgreeTerms(e.target.checked)}
-                                className="mt-0.5 h-5 w-5 cursor-pointer rounded border-gray-600 bg-surface-dark text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
+                                className="mt-0.5 h-5 w-5 cursor-pointer rounded border-text-secondary bg-surface text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
                                 required
                             />
-                            <span className="text-sm text-gray-300">
+                            <span className="text-sm text-text-primary">
                                 I agree to the{' '}
                                 <a href="#" className="text-primary hover:underline">
                                     Terms and Conditions
@@ -177,10 +177,10 @@ export default function Register() {
                                 type="checkbox"
                                 checked={agreePrivacy}
                                 onChange={(e) => setAgreePrivacy(e.target.checked)}
-                                className="mt-0.5 h-5 w-5 cursor-pointer rounded border-gray-600 bg-surface-dark text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
+                                className="mt-0.5 h-5 w-5 cursor-pointer rounded border-text-secondary bg-surface text-primary focus:ring-2 focus:ring-primary focus:ring-offset-0"
                                 required
                             />
-                            <span className="text-sm text-gray-300">
+                            <span className="text-sm text-text-primary">
                                 I agree to the{' '}
                                 <a href="#" className="text-primary hover:underline">
                                     Privacy Policy
@@ -192,7 +192,7 @@ export default function Register() {
                     {/* Create Account Button */}
                     <button
                         type="submit"
-                        className="group relative w-full overflow-hidden rounded-xl bg-primary py-3.5 font-semibold text-background-dark shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-primary/40 active:scale-[0.98]"
+                        className="group relative w-full overflow-hidden rounded-xl bg-primary py-3.5 font-semibold text-background shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-primary/40 active:scale-[0.98]"
                     >
                         <span className="relative z-10">Create Account</span>
                         <div className="absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
@@ -201,17 +201,17 @@ export default function Register() {
                     {/* Divider */}
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-white/10" />
+                            <div className="w-full border-t border-border" />
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="bg-background-dark px-4 text-gray-400">Or continue with</span>
+                            <span className="bg-background px-4 text-text-secondary">Or continue with</span>
                         </div>
                     </div>
 
                     {/* Google Sign Up */}
                     <button
                         type="button"
-                        className="w-full flex justify-center items-center gap-3 py-3.5 px-4 border border-slate-700 rounded-lg shadow-sm bg-white text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors duration-200 font-medium text-sm"
+                        className="w-full flex justify-center items-center gap-3 py-3.5 px-4 border border-border rounded-lg shadow-sm bg-surface text-text-primary hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors duration-200 font-medium text-sm"
                     >
                         <svg className="h-5 w-5" viewBox="0 0 24 24">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -224,7 +224,7 @@ export default function Register() {
                 </form>
 
                 {/* Sign In Link */}
-                <p className="text-center text-sm text-gray-400">
+                <p className="text-center text-sm text-text-secondary">
                     Already have an account?{' '}
                     <Link href="/login" className="font-semibold text-primary hover:underline">
                         Sign In

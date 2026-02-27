@@ -5,19 +5,22 @@ import Link from 'next/link';
 
 export default function Insurance() {
     const [autoExpanded, setAutoExpanded] = useState(false);
+    const [homeExpanded, setHomeExpanded] = useState(false);
+    const [deviceExpanded, setDeviceExpanded] = useState(false);
+    const [lifeExpanded, setLifeExpanded] = useState(false);
 
     return (
         <>
             {/* Header */}
-            <header className="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+            <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
                 <div className="flex items-center justify-between px-4 h-14">
                     <Link
                         href="/"
-                        className="flex items-center justify-center w-10 h-10 -ml-2 rounded-full active:bg-white/10 text-white transition-colors"
+                        className="flex items-center justify-center w-10 h-10 -ml-2 rounded-full active:bg-black/10 dark:active:bg-white/10 text-text-primary transition-colors"
                     >
                         <span className="material-symbols-outlined !text-[28px]">chevron_left</span>
                     </Link>
-                    <h1 className="text-base font-semibold text-white tracking-wide">Insurance</h1>
+                    <h1 className="text-base font-semibold text-text-primary tracking-wide">Insurance</h1>
                     <div className="w-10" />
                 </div>
             </header>
@@ -32,118 +35,243 @@ export default function Insurance() {
                             <span className="material-symbols-outlined text-primary text-2xl filled">shield_lock</span>
                         </div>
                         <div className="flex-1">
-                            <p className="text-white font-bold text-sm leading-snug">
+                            <p className="text-text-primary font-bold text-sm leading-snug">
                                 Link your insurance to your eWa account
                             </p>
-                            <p className="text-slate-400 text-xs mt-1">
+                            <p className="text-text-secondary text-xs mt-1">
                                 Manage all your policies in one place
                             </p>
                         </div>
                     </div>
-                    <button className="mt-4 w-full py-2.5 rounded-xl bg-primary text-background-dark text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
+                    <button className="mt-4 w-full py-2.5 rounded-xl bg-primary text-background text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
                         <span className="material-symbols-outlined text-lg">add_circle</span>
                         Register Insurance
                     </button>
                 </div>
 
                 {/* Section Title */}
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold px-1 pt-2">
+                <p className="text-xs text-text-secondary uppercase tracking-wider font-semibold px-1 pt-2">
                     Insurance types
                 </p>
 
                 {/* Auto Insurance – expandable */}
-                <div className="bg-surface-dark rounded-2xl border border-white/10 overflow-hidden">
+                <div className="bg-surface rounded-2xl border border-border overflow-hidden">
                     <button
                         onClick={() => setAutoExpanded(!autoExpanded)}
-                        className="w-full flex items-center justify-between p-4 active:bg-white/5 transition-colors group"
+                        className="w-full flex items-center justify-between p-4 active:bg-black/5 dark:active:bg-white/5 transition-colors group"
                     >
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
                                 <span className="material-symbols-outlined text-blue-400 text-xl filled">directions_car</span>
                             </div>
                             <div className="text-left">
-                                <p className="text-white font-semibold text-sm">Car Insurance</p>
-                                <p className="text-slate-500 text-xs mt-0.5">Liability & Comprehensive</p>
+                                <p className="text-text-primary font-semibold text-sm">Car Insurance</p>
+                                <p className="text-text-secondary text-xs mt-0.5">Liability & Comprehensive</p>
                             </div>
                         </div>
-                        <span className={`material-symbols-outlined text-slate-400 transition-transform duration-200 ${autoExpanded ? 'rotate-180' : ''}`}>
+                        <span className={`material-symbols-outlined text-text-secondary transition-transform duration-200 ${autoExpanded ? 'rotate-180' : ''}`}>
                             expand_more
                         </span>
                     </button>
 
                     {autoExpanded && (
-                        <div className="border-t border-white/5">
+                        <div className="border-t border-border">
                             {/* Liability */}
-                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-white/5 active:bg-white/5 transition-colors group">
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
                                 <div className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
                                         <span className="material-symbols-outlined text-emerald-400" style={{ fontSize: '18px' }}>verified_user</span>
                                     </div>
                                     <div className="text-left">
-                                        <p className="text-white text-sm font-medium">Third-Party Liability</p>
-                                        <p className="text-slate-500 text-xs">Mandatory coverage</p>
+                                        <p className="text-text-primary text-sm font-medium">Third-Party Liability</p>
+                                        <p className="text-text-secondary text-xs">Mandatory coverage</p>
                                     </div>
                                 </div>
-                                <span className="material-symbols-outlined text-slate-600 text-lg">chevron_right</span>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
                             </button>
-                            <div className="h-px bg-white/5 mx-4" />
+                            <div className="h-px bg-border mx-4" />
                             {/* Comprehensive / Casco */}
-                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-white/5 active:bg-white/5 transition-colors group">
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
                                 <div className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
                                         <span className="material-symbols-outlined text-amber-400" style={{ fontSize: '18px' }}>car_crash</span>
                                     </div>
                                     <div className="text-left">
-                                        <p className="text-white text-sm font-medium">Comprehensive (Casco)</p>
-                                        <p className="text-slate-500 text-xs">Full or partial coverage</p>
+                                        <p className="text-text-primary text-sm font-medium">Comprehensive (Casco)</p>
+                                        <p className="text-text-secondary text-xs">Full or partial coverage</p>
                                     </div>
                                 </div>
-                                <span className="material-symbols-outlined text-slate-600 text-lg">chevron_right</span>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
                             </button>
                         </div>
                     )}
                 </div>
 
                 {/* Home / Property */}
-                <button className="w-full bg-surface-dark rounded-2xl border border-white/10 flex items-center justify-between p-4 hover:border-white/20 active:bg-white/5 transition-all">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center">
-                            <span className="material-symbols-outlined text-rose-400 text-xl filled">home</span>
+                <div className="bg-surface rounded-2xl border border-border overflow-hidden">
+                    <button
+                        onClick={() => setHomeExpanded(!homeExpanded)}
+                        className="w-full flex items-center justify-between p-4 active:bg-black/5 dark:active:bg-white/5 transition-colors group"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-rose-400 text-xl filled">home</span>
+                            </div>
+                            <div className="text-left">
+                                <p className="text-text-primary font-semibold text-sm">Home & Property Insurance</p>
+                                <p className="text-text-secondary text-xs mt-0.5">Apartment, house, holiday home</p>
+                            </div>
                         </div>
-                        <div className="text-left">
-                            <p className="text-white font-semibold text-sm">Home & Property Insurance</p>
-                            <p className="text-slate-500 text-xs mt-0.5">Apartment, house, holiday home</p>
+                        <span className={`material-symbols-outlined text-text-secondary transition-transform duration-200 ${homeExpanded ? 'rotate-180' : ''}`}>
+                            expand_more
+                        </span>
+                    </button>
+
+                    {homeExpanded && (
+                        <div className="border-t border-border">
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-rose-400" style={{ fontSize: '18px' }}>apartment</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">Apartment Insurance</p>
+                                        <p className="text-text-secondary text-xs">Contents & building coverage</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
+                            <div className="h-px bg-border mx-4" />
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-rose-400" style={{ fontSize: '18px' }}>house</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">House & Holiday Home</p>
+                                        <p className="text-text-secondary text-xs">Full property protection</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
                         </div>
-                    </div>
-                    <span className="material-symbols-outlined text-slate-600 text-lg">chevron_right</span>
-                </button>
+                    )}
+                </div>
 
                 {/* Device / Contents */}
-                <button className="w-full bg-surface-dark rounded-2xl border border-white/10 flex items-center justify-between p-4 hover:border-white/20 active:bg-white/5 transition-all">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center">
-                            <span className="material-symbols-outlined text-violet-400 text-xl">devices</span>
+                <div className="bg-surface rounded-2xl border border-border overflow-hidden">
+                    <button
+                        onClick={() => setDeviceExpanded(!deviceExpanded)}
+                        className="w-full flex items-center justify-between p-4 active:bg-black/5 dark:active:bg-white/5 transition-colors group"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-violet-400 text-xl">devices</span>
+                            </div>
+                            <div className="text-left">
+                                <p className="text-text-primary font-semibold text-sm">Device & Contents Insurance</p>
+                                <p className="text-text-secondary text-xs mt-0.5">Phone, laptop & other valuables</p>
+                            </div>
                         </div>
-                        <div className="text-left">
-                            <p className="text-white font-semibold text-sm">Device & Contents Insurance</p>
-                            <p className="text-slate-500 text-xs mt-0.5">Phone, laptop & other valuables</p>
+                        <span className={`material-symbols-outlined text-text-secondary transition-transform duration-200 ${deviceExpanded ? 'rotate-180' : ''}`}>
+                            expand_more
+                        </span>
+                    </button>
+
+                    {deviceExpanded && (
+                        <div className="border-t border-border">
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-violet-400" style={{ fontSize: '18px' }}>smartphone</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">Smartphone & Tablet</p>
+                                        <p className="text-text-secondary text-xs">Damage, theft & breakdown</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
+                            <div className="h-px bg-border mx-4" />
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-violet-400" style={{ fontSize: '18px' }}>laptop_mac</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">Laptop & Valuables</p>
+                                        <p className="text-text-secondary text-xs">Electronics & personal items</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
                         </div>
-                    </div>
-                    <span className="material-symbols-outlined text-slate-600 text-lg">chevron_right</span>
-                </button>
+                    )}
+                </div>
+
+                {/* Life & Health */}
+                <div className="bg-surface rounded-2xl border border-border overflow-hidden">
+                    <button
+                        onClick={() => setLifeExpanded(!lifeExpanded)}
+                        className="w-full flex items-center justify-between p-4 active:bg-black/5 dark:active:bg-white/5 transition-colors group"
+                    >
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center">
+                                <span className="material-symbols-outlined text-teal-500 text-xl filled">favorite</span>
+                            </div>
+                            <div className="text-left">
+                                <p className="text-text-primary font-semibold text-sm">Life & Health Insurance</p>
+                                <p className="text-text-secondary text-xs mt-0.5">Personal protection & medical</p>
+                            </div>
+                        </div>
+                        <span className={`material-symbols-outlined text-text-secondary transition-transform duration-200 ${lifeExpanded ? 'rotate-180' : ''}`}>
+                            expand_more
+                        </span>
+                    </button>
+
+                    {lifeExpanded && (
+                        <div className="border-t border-border">
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-teal-500" style={{ fontSize: '18px' }}>health_and_safety</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">Health Insurance</p>
+                                        <p className="text-text-secondary text-xs">Private medical coverage</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
+                            <div className="h-px bg-border mx-4" />
+                            <button className="w-full flex items-center justify-between px-5 py-3.5 hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors group">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center">
+                                        <span className="material-symbols-outlined text-teal-500" style={{ fontSize: '18px' }}>family_restroom</span>
+                                    </div>
+                                    <div className="text-left">
+                                        <p className="text-text-primary text-sm font-medium">Life Insurance</p>
+                                        <p className="text-text-secondary text-xs">Family protection & savings</p>
+                                    </div>
+                                </div>
+                                <span className="material-symbols-outlined text-text-secondary text-lg">chevron_right</span>
+                            </button>
+                        </div>
+                    )}
+                </div>
 
                 {/* Divider */}
-                <p className="text-xs text-slate-500 uppercase tracking-wider font-semibold px-1 pt-2">
+                <p className="text-xs text-text-secondary uppercase tracking-wider font-semibold px-1 pt-2">
                     My Policies
                 </p>
 
                 {/* My Insurances – empty state */}
-                <div className="bg-surface-dark rounded-2xl border border-white/10 p-6 flex flex-col items-center text-center">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-3">
-                        <span className="material-symbols-outlined text-slate-500 text-3xl">folder_open</span>
+                <div className="bg-surface rounded-2xl border border-border p-6 flex flex-col items-center text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-black/5 dark:bg-white/5 flex items-center justify-center mb-3">
+                        <span className="material-symbols-outlined text-text-secondary text-3xl">folder_open</span>
                     </div>
-                    <p className="text-white font-semibold text-sm">My Insurances</p>
-                    <p className="text-slate-500 text-xs mt-1 max-w-[200px]">
+                    <p className="text-text-primary font-semibold text-sm">My Insurances</p>
+                    <p className="text-text-secondary text-xs mt-1 max-w-[200px]">
                         No policies linked yet. Add one above to get started.
                     </p>
                     <button className="mt-4 px-5 py-2 rounded-xl border border-primary/30 text-primary text-sm font-semibold hover:bg-primary/10 transition-colors">

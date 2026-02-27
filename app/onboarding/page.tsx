@@ -33,7 +33,7 @@ export default function Onboarding() {
         if (currentScreen < onboardingScreens.length - 1) {
             setCurrentScreen(currentScreen + 1);
         } else {
-            router.push('/');
+            router.push('/login');
         }
     };
 
@@ -44,7 +44,7 @@ export default function Onboarding() {
     };
 
     const handleSkip = () => {
-        router.push('/');
+        router.push('/login');
     };
 
     const handleTouchStart = (e: React.TouchEvent) => {
@@ -70,7 +70,7 @@ export default function Onboarding() {
 
     return (
         <div
-            className="relative flex h-screen w-full flex-col overflow-hidden bg-background-dark overscroll-none touch-pan-y"
+            className="relative flex h-screen w-full flex-col overflow-hidden bg-background overscroll-none touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
@@ -87,23 +87,19 @@ export default function Onboarding() {
             {/* Main Content Area */}
             <main className="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative pb-32">
                 {/* Illustration Container */}
-                <div className="relative w-full flex items-center justify-center py-8">
-                    {/* Background Pulse Circles */}
-                    <div className="absolute w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute w-48 h-48 bg-primary/10 rounded-full blur-2xl"></div>
-
+                <div className="relative w-full flex items-center justify-center pt-12 pb-8">
                     {/* Icon Container */}
-                    <div className="relative z-10 flex items-center justify-center w-40 h-40 bg-gradient-to-br from-surface-dark to-background-dark rounded-3xl border border-primary/20 shadow-neon">
+                    <div className="relative z-10 flex items-center justify-center w-[160px] h-[160px] bg-gradient-to-br from-surface to-background rounded-[32px] border border-primary/20 shadow-[0_0_30px_rgba(6,249,249,0.1)]">
                         {currentScreen === 0 ? (
                             <img
                                 src="/ewa-icon.svg"
                                 alt="eWa logo"
-                                className="w-20 h-20 object-contain"
+                                className="w-[100px] h-[100px] object-contain"
                             />
                         ) : (
                             <span
                                 className="material-symbols-outlined text-primary filled"
-                                style={{ fontSize: '96px', fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48" }}
+                                style={{ fontSize: '64px', fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48" }}
                             >
                                 {screen.icon}
                             </span>
@@ -114,28 +110,28 @@ export default function Onboarding() {
                 </div>
 
                 {/* Text Content */}
-                <div className="text-center mt-8 space-y-4 max-w-xs mx-auto">
-                    <h1 className="text-3xl font-bold tracking-tight text-white leading-tight">
+                <div className="text-center mt-12 space-y-4 max-w-xs mx-auto">
+                    <h1 className="text-[28px] font-bold tracking-tight text-text-primary leading-[1.2]">
                         {screen.title} <br />
                         <span className="text-primary">{screen.titleHighlight}</span>
                     </h1>
-                    <p className="text-slate-400 text-base leading-relaxed font-normal">
+                    <p className="text-text-secondary text-base leading-relaxed font-normal mt-4">
                         {screen.description}
                     </p>
                 </div>
             </main>
 
             {/* Bottom Action Area */}
-            <footer className="absolute bottom-0 left-0 right-0 w-full px-6 pb-8 pt-4 z-20">
+            <footer className="absolute bottom-[40px] left-0 right-0 w-full px-6 z-20">
                 <div className="max-w-md mx-auto">
                     {/* Pagination Dots */}
-                    <div className="flex w-full flex-row items-center justify-center gap-3 mb-8">
+                    <div className="flex w-full flex-row items-center justify-center gap-2 mb-8">
                         {onboardingScreens.map((_, index) => (
                             <div
                                 key={index}
                                 className={`h-2 rounded-full transition-all duration-300 ${index === currentScreen
                                     ? 'w-8 bg-primary shadow-[0_0_10px_rgba(6,249,249,0.4)]'
-                                    : 'w-2 bg-surface-dark ring-1 ring-inset ring-slate-700/50'
+                                    : 'w-2 bg-transparent border border-border'
                                     }`}
                             ></div>
                         ))}
@@ -143,7 +139,7 @@ export default function Onboarding() {
 
                     <button
                         onClick={handleNext}
-                        className="group flex w-full items-center justify-center gap-2 rounded-xl bg-primary py-4 text-lg font-semibold text-background-dark shadow-lg transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
+                        className="group flex w-full h-14 items-center justify-center gap-2 rounded-2xl bg-primary text-[18px] font-semibold text-background shadow-lg shadow-primary/30 transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
                     >
                         {currentScreen < onboardingScreens.length - 1 ? 'Next' : 'Get Started'}
                         <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">

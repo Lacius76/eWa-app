@@ -29,7 +29,7 @@ export default function Login() {
     };
 
     return (
-        <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background-dark">
+        <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background">
             {/* Abstract Background Pattern */}
             <div className="absolute inset-0 pointer-events-none z-0 opacity-30">
                 <svg width="100%" height="100%" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
@@ -39,35 +39,32 @@ export default function Login() {
             </div>
 
             {/* Main Content Container */}
-            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-12 pb-8 justify-between sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
+            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-12 pb-8 justify-end sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
                 {/* Header Section */}
-                <div className="flex flex-col items-center justify-center pt-8 pb-10">
+                <div className="flex flex-col items-center justify-center pt-8 pb-12">
                     {/* Logo Icon */}
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 shadow-neon">
-                        <span className="material-symbols-outlined text-primary text-4xl filled">
-                            account_balance_wallet
-                        </span>
+                    <div className="w-[120px] h-[120px] rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 shadow-[0_0_20px_rgba(6,249,249,0.1)]">
+                        <img src="/ewa-icon.svg" alt="eWa Logo" className="w-[80px] h-[80px]" />
                     </div>
-                    <h1 className="text-primary tracking-tight text-4xl font-extrabold leading-tight text-center">eWa</h1>
-                    <p className="text-primary/80 text-lg font-semibold mt-1">Electronic Wallet</p>
-                    <p className="text-slate-400 text-sm font-medium mt-2">Welcome back to the future of finance</p>
+                    <h1 className="text-primary/80 tracking-tight text-lg font-semibold leading-tight text-center">Electronic Wallet</h1>
+                    <p className="text-text-secondary text-sm font-medium mt-2">Welcome back to the future of finance</p>
                 </div>
 
                 {/* Form Section */}
                 <form onSubmit={handleSignIn} className="w-full space-y-5">
                     {/* Email Input */}
                     <div className="relative group">
-                        <label className="block text-sm font-medium text-slate-300 mb-1.5 ml-1" htmlFor="email">
+                        <label className="block text-sm font-medium text-text-primary mb-1.5 ml-1" htmlFor="email">
                             Email Address
                         </label>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <span className="material-symbols-outlined text-slate-500 group-focus-within:text-primary transition-colors duration-300">
+                                <span className="material-symbols-outlined text-text-secondary group-focus-within:text-primary transition-colors duration-300">
                                     mail
                                 </span>
                             </div>
                             <input
-                                className="block w-full rounded-lg border-slate-700 bg-surface-dark/50 text-white placeholder-slate-500 focus:border-primary focus:ring-1 focus:ring-primary pl-11 pr-4 py-4 sm:text-sm transition-all duration-200 ease-in-out border outline-none"
+                                className="block w-full rounded-xl border-border bg-surface/50 text-text-primary placeholder-text-secondary focus:border-primary focus:ring-1 focus:ring-primary pl-11 pr-4 py-4 sm:text-sm transition-all duration-200 ease-in-out border outline-none"
                                 id="email"
                                 placeholder="you@example.com"
                                 type="email"
@@ -83,7 +80,7 @@ export default function Login() {
                     {/* Password Input */}
                     <div className="relative group">
                         <div className="flex justify-between items-center mb-1.5 ml-1">
-                            <label className="block text-sm font-medium text-slate-300" htmlFor="password">
+                            <label className="block text-sm font-medium text-text-primary" htmlFor="password">
                                 Password
                             </label>
                             <Link className="text-xs text-primary hover:text-primary-dark transition-colors font-medium" href="#">
@@ -92,12 +89,12 @@ export default function Login() {
                         </div>
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                <span className="material-symbols-outlined text-slate-500 group-focus-within:text-primary transition-colors duration-300">
+                                <span className="material-symbols-outlined text-text-secondary group-focus-within:text-primary transition-colors duration-300">
                                     lock
                                 </span>
                             </div>
                             <input
-                                className="block w-full rounded-lg border-slate-700 bg-surface-dark/50 text-white placeholder-slate-500 focus:border-primary focus:ring-1 focus:ring-primary pl-11 pr-12 py-4 sm:text-sm transition-all duration-200 ease-in-out border outline-none"
+                                className="block w-full rounded-xl border-border bg-surface/50 text-text-primary placeholder-text-secondary focus:border-primary focus:ring-1 focus:ring-primary pl-11 pr-12 py-4 sm:text-sm transition-all duration-200 ease-in-out border outline-none"
                                 id="password"
                                 placeholder="••••••••"
                                 type={showPassword ? 'text' : 'password'}
@@ -108,7 +105,7 @@ export default function Login() {
                                 autoComplete="current-password"
                             />
                             <button
-                                className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-500 hover:text-slate-300 focus:outline-none"
+                                className="absolute inset-y-0 right-0 pr-4 flex items-center text-text-secondary hover:text-text-primary focus:outline-none"
                                 type="button"
                                 onClick={() => setShowPassword(!showPassword)}
                             >
@@ -121,7 +118,7 @@ export default function Login() {
 
                     {/* Sign In Button */}
                     <button
-                        className="w-full flex justify-center items-center py-4 px-4 border border-transparent rounded-lg shadow-sm text-base font-bold text-background-dark bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 shadow-neon mt-4"
+                        className="w-full h-14 flex justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-background bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 mt-4"
                         type="submit"
                     >
                         Sign In
@@ -130,16 +127,16 @@ export default function Login() {
                     {/* Divider */}
                     <div className="relative py-4">
                         <div className="absolute inset-0 flex items-center">
-                            <div className="w-full border-t border-slate-700"></div>
+                            <div className="w-full border-t border-border"></div>
                         </div>
                         <div className="relative flex justify-center text-sm">
-                            <span className="px-4 bg-background-dark text-slate-500 font-medium">Or continue with</span>
+                            <span className="px-4 bg-background text-text-secondary font-medium">Or continue with</span>
                         </div>
                     </div>
 
                     {/* Google Button */}
                     <button
-                        className="w-full flex justify-center items-center gap-3 py-3.5 px-4 border border-slate-700 rounded-lg shadow-sm bg-white text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors duration-200 font-medium text-sm"
+                        className="w-full h-[50px] flex justify-center items-center gap-3 py-3.5 px-4 border border-border rounded-xl shadow-sm bg-surface text-text-primary hover:bg-black/5 dark:hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors duration-200 font-semibold text-sm"
                         type="button"
                     >
                         <svg className="h-5 w-5" viewBox="0 0 24 24">
@@ -155,14 +152,14 @@ export default function Login() {
                 {/* Footer */}
                 <div className="mt-auto pt-8 pb-4 text-center">
                     {/* Sign Up Link */}
-                    <p className="text-center text-sm text-gray-400">
+                    <p className="text-center text-sm text-text-secondary">
                         Don't have an account?{' '}
                         <Link href="/register" className="font-semibold text-primary hover:underline">
                             Sign Up
                         </Link>
                     </p>
                     <div className="mt-8 flex justify-center">
-                        <div className="h-1 w-1/3 bg-slate-800 rounded-full"></div>
+                        <div className="h-1 w-1/3 bg-slate-800 dark:bg-slate-800 bg-black/20 rounded-full"></div>
                     </div>
                 </div>
             </main>

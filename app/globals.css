@@ -1,14 +1,21 @@
 @import "tailwindcss";
 
-@theme inline {
-  /* eWa Color Palette - Source of Truth: e-vignette-payment.html */
-  --color-primary: #06f9f9;
-  --color-primary-dark: #04c2c2;
-  --color-accent: #7F00FF;
-  --color-background-light: #f5f8f8;
-  --color-background-dark: #0a0e17;
-  --color-surface-dark: #161b26;
-  --color-surface-highlight: #1f2635;
+/* Force Tailwind dark mode to respond to the `.dark` class added by next-themes */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* eWa Color Palette - Dynamic Light/Dark Mode via CSS vars */
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent: var(--accent);
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-highlight: var(--surface-highlight);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
 
   /* Typography */
   --font-display: 'Inter', sans-serif;
@@ -22,6 +29,38 @@
   /* Shadows */
   --shadow-neon: 0 0 10px rgba(6, 249, 249, 0.2), 0 0 20px rgba(6, 249, 249, 0.1);
 }
+
+/* Base Light Theme Values */
+:root {
+  --primary: #10424F;
+  --primary-dark: #082a33;
+  --accent: #7F00FF;
+
+  --background: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-highlight: #E2E8F0;
+
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --border: rgba(15, 23, 42, 0.1);
+}
+
+/* Dark Theme Overrides */
+.dark {
+  --primary: #06f9f9;
+  --primary-dark: #04c2c2;
+  --accent: #7F00FF;
+
+  --background: #0a0e17;
+  --surface: #161b26;
+  --surface-highlight: #1f2635;
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #9ca3af;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+
 
 /* Custom scrollbar hiding for clean mobile look */
 .no-scrollbar::-webkit-scrollbar {
@@ -43,8 +82,8 @@ html {
 }
 
 body {
-  background: var(--color-background-dark);
-  color: #e2e8f0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

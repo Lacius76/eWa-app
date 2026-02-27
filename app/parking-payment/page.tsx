@@ -29,15 +29,15 @@ export default function ParkingPayment() {
     return (
         <>
             {/* Header */}
-            <header className="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-white/5">
+            <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
                 <div className="flex items-center justify-between px-4 h-14">
                     <Link
                         href="/parking"
-                        className="flex items-center justify-center w-10 h-10 -ml-2 rounded-full active:bg-white/10 text-white transition-colors"
+                        className="flex items-center justify-center w-10 h-10 -ml-2 rounded-full active:bg-black/10 dark:active:bg-white/10 text-text-primary transition-colors"
                     >
                         <span className="material-symbols-outlined !text-[28px]">chevron_left</span>
                     </Link>
-                    <h1 className="text-base font-semibold text-white tracking-wide">Start Parking</h1>
+                    <h1 className="text-base font-semibold text-text-primary tracking-wide">Start Parking</h1>
                     <div className="w-10" />
                 </div>
             </header>
@@ -46,7 +46,7 @@ export default function ParkingPayment() {
             <main className="flex-1 flex flex-col px-4 pt-6 pb-24 overflow-y-auto no-scrollbar max-w-md mx-auto w-full">
                 {/* Title */}
                 <div className="flex items-center gap-2 mb-4">
-                    <h2 className="text-2xl font-bold text-white tracking-tight">Parking Summary</h2>
+                    <h2 className="text-2xl font-bold text-text-primary tracking-tight">Parking Summary</h2>
                     <span className="material-symbols-outlined text-primary filled">local_parking</span>
                 </div>
 
@@ -54,61 +54,61 @@ export default function ParkingPayment() {
                 <Card withGlow className="space-y-6">
                     {/* Location Info */}
                     <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-surface-highlight flex items-center justify-center shrink-0 border border-white/5 shadow-inner">
+                        <div className="w-12 h-12 rounded-xl bg-surface-highlight flex items-center justify-center shrink-0 border border-border shadow-inner">
                             <span className="material-symbols-outlined text-primary text-2xl">location_on</span>
                         </div>
                         <div className="flex-1">
-                            <p className="text-sm text-slate-400 mb-1">Location</p>
-                            <p className="text-lg font-semibold text-white">
+                            <p className="text-sm text-text-secondary mb-1">Location</p>
+                            <p className="text-lg font-semibold text-text-primary">
                                 Zone A – Mariahilf
                             </p>
-                            <p className="text-xs text-slate-500 mt-0.5">Mariahilfer Str. 1, 1060 Wien</p>
+                            <p className="text-xs text-text-secondary/80 mt-0.5">Mariahilfer Str. 1, 1060 Wien</p>
                         </div>
                     </div>
 
                     {/* License Plate */}
-                    <div className="bg-[#0f141f] rounded-xl p-4 border border-white/5 flex items-center justify-between">
+                    <div className="bg-surface rounded-xl p-4 border border-border flex items-center justify-between">
                         <div className="flex flex-col">
-                            <span className="text-xs text-slate-500 uppercase tracking-wider mb-1">License Plate</span>
-                            <div className="font-mono text-xl tracking-widest text-white flex items-center gap-2">
-                                <span className="inline-block w-4 h-4 rounded-full border-2 border-white/20 relative overflow-hidden bg-blue-900 flex items-center justify-center">
+                            <span className="text-xs text-text-secondary/80 uppercase tracking-wider mb-1">License Plate</span>
+                            <div className="font-mono text-xl tracking-widest text-text-primary flex items-center gap-2">
+                                <span className="inline-block w-4 h-4 rounded-full border-2 border-black/20 dark:border-white/20 relative overflow-hidden bg-blue-900 flex items-center justify-center">
                                     <span className="text-[6px] leading-none text-white font-sans font-bold">EU</span>
                                 </span>
                                 ABC-123
                             </div>
                         </div>
-                        <span className="material-symbols-outlined text-slate-600">badge</span>
+                        <span className="material-symbols-outlined text-text-secondary">badge</span>
                     </div>
 
                     {/* Duration Selector */}
                     <div>
-                        <h3 className="text-sm font-semibold text-white mb-3">Select Duration</h3>
-                        <div className="bg-surface-dark rounded-2xl p-1 border border-white/5 space-y-1">
+                        <h3 className="text-sm font-semibold text-text-primary mb-3">Select Duration</h3>
+                        <div className="bg-surface rounded-2xl p-1 border border-border space-y-1">
                             {(Object.entries(durationOptions) as [keyof typeof durationOptions, typeof durationOptions[keyof typeof durationOptions]][]).map(([key, opt]) => (
                                 <label
                                     key={key}
                                     className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedDuration === key
-                                            ? 'bg-surface-highlight border border-primary/30 shadow-neon'
-                                            : 'hover:bg-white/5 opacity-70 hover:opacity-100'
+                                        ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                        : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                         }`}
                                     onClick={() => setSelectedDuration(key)}
                                 >
                                     <div className="flex items-center gap-3">
-                                        <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-white/10">
+                                        <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-border">
                                             <span className="text-primary font-bold" style={{ fontSize: opt.icon.length > 1 ? '14px' : '20px' }}>{opt.icon}</span>
-                                            <span className="text-[7px] text-slate-400 uppercase">{opt.unit}</span>
+                                            <span className="text-[7px] text-text-secondary uppercase">{opt.unit}</span>
                                         </div>
                                         <div>
-                                            <p className="text-white font-medium text-sm">{opt.label}</p>
-                                            <p className="text-slate-400 text-xs">{opt.sublabel}</p>
+                                            <p className="text-text-primary font-medium text-sm">{opt.label}</p>
+                                            <p className="text-text-secondary text-xs">{opt.sublabel}</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <span className="text-lg font-bold text-primary">€{opt.price}</span>
-                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedDuration === key ? 'bg-primary shadow-neon' : 'border-2 border-slate-600'
+                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedDuration === key ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary/50'
                                             }`}>
                                             {selectedDuration === key && (
-                                                <span className="material-symbols-outlined text-background-dark text-sm font-bold">check</span>
+                                                <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
                                             )}
                                         </div>
                                     </div>
@@ -121,49 +121,49 @@ export default function ParkingPayment() {
                     {/* Details Grid */}
                     <div className="grid grid-cols-2 gap-4 pt-2">
                         <div>
-                            <p className="text-xs text-slate-400 mb-1">Duration</p>
-                            <div className="flex items-center gap-2 text-white font-medium">
+                            <p className="text-xs text-text-secondary mb-1">Duration</p>
+                            <div className="flex items-center gap-2 text-text-primary font-medium">
                                 <span className="material-symbols-outlined text-accent text-lg">schedule</span>
                                 {selected.label}
                             </div>
                         </div>
                         <div className="text-right">
-                            <p className="text-xs text-slate-400 mb-1">Total Cost</p>
+                            <p className="text-xs text-text-secondary mb-1">Total Cost</p>
                             <p className="text-xl font-bold text-primary">€{selected.price}</p>
                         </div>
-                        <div className="col-span-2 flex justify-between text-xs text-slate-500 pt-2">
-                            <span>Zone: <span className="text-slate-300">A – Mariahilf</span></span>
-                            <span>Rate: <span className="text-slate-300">€{selected.price}/{selected.label}</span></span>
+                        <div className="col-span-2 flex justify-between text-xs text-text-secondary/80 pt-2">
+                            <span>Zone: <span className="text-text-secondary">A – Mariahilf</span></span>
+                            <span>Rate: <span className="text-text-secondary">€{selected.price}/{selected.label}</span></span>
                         </div>
                     </div>
                 </Card>
 
                 {/* Payment Method */}
-                <h3 className="text-lg font-semibold text-white mt-8 mb-4 px-1">Payment Method</h3>
-                <div className="bg-surface-dark rounded-2xl p-1 border border-white/5 space-y-1">
+                <h3 className="text-lg font-semibold text-text-primary mt-8 mb-4 px-1">Payment Method</h3>
+                <div className="bg-surface rounded-2xl p-1 border border-border space-y-1">
                     <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer bg-surface-highlight border border-primary/30 shadow-neon transition-all">
                         <div className="w-12 h-8 bg-gradient-to-br from-slate-700 to-slate-900 rounded border border-white/10 flex items-center justify-center relative overflow-hidden shadow-sm">
                             <div className="absolute top-2 left-2 w-1.5 h-1 bg-yellow-500/80 rounded-[1px]" />
                             <span className="relative z-10 font-bold italic text-xs text-white/90 tracking-tighter">VISA</span>
                         </div>
                         <div className="flex-1">
-                            <p className="text-white font-medium text-sm">Super App Virtual Card</p>
-                            <p className="text-slate-400 text-xs">•••• 4589 • Exp 12/26</p>
+                            <p className="text-text-primary font-medium text-sm">Super App Virtual Card</p>
+                            <p className="text-text-secondary text-xs">•••• 4589 • Exp 12/26</p>
                         </div>
                         <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-neon">
-                            <span className="material-symbols-outlined text-background-dark text-sm font-bold">check</span>
+                            <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
                         </div>
                         <input checked className="sr-only" name="payment_method" type="radio" readOnly />
                     </label>
-                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer hover:bg-white/5 transition-all opacity-60 hover:opacity-100">
+                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-all opacity-60 hover:opacity-100">
                         <div className="w-12 h-8 bg-white rounded border border-slate-200 flex items-center justify-center">
                             <span className="text-[10px] font-bold text-orange-600">MC</span>
                         </div>
                         <div className="flex-1">
-                            <p className="text-white font-medium text-sm">Personal Debit</p>
-                            <p className="text-slate-400 text-xs">•••• 8821</p>
+                            <p className="text-text-primary font-medium text-sm">Personal Debit</p>
+                            <p className="text-text-secondary text-xs">•••• 8821</p>
                         </div>
-                        <div className="w-6 h-6 rounded-full border-2 border-slate-600" />
+                        <div className="w-6 h-6 rounded-full border-2 border-text-secondary/50" />
                         <input className="sr-only" name="payment_method" type="radio" />
                     </label>
                     <button className="w-full py-3 text-center text-primary text-sm font-medium hover:text-primary-dark transition-colors flex items-center justify-center gap-2">
@@ -174,11 +174,11 @@ export default function ParkingPayment() {
             </main>
 
             {/* Bottom Action Bar */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 bg-background-dark/90 backdrop-blur-xl border-t border-white/5 z-[100]">
+            <div className="fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-xl border-t border-border z-[100]">
                 <div className="max-w-md mx-auto w-full flex flex-col gap-3">
                     <div className="flex justify-between items-end px-1 mb-1">
-                        <span className="text-sm text-slate-400">Total amount</span>
-                        <span className="text-2xl font-bold text-white tracking-tight">€{selected.price}</span>
+                        <span className="text-sm text-text-secondary">Total amount</span>
+                        <span className="text-2xl font-bold text-text-primary tracking-tight">€{selected.price}</span>
                     </div>
                     <Button
                         onClick={handlePayment}
@@ -188,9 +188,9 @@ export default function ParkingPayment() {
                     >
                         Confirm and Pay
                     </Button>
-                    <p className="text-center text-[10px] text-slate-500 mt-1">
+                    <p className="text-center text-[10px] text-text-secondary/80 mt-1">
                         By confirming, you agree to the{' '}
-                        <a className="underline hover:text-slate-300" href="#">T&Cs</a>
+                        <a className="underline hover:text-text-primary" href="#">T&Cs</a>
                     </p>
                 </div>
             </div>

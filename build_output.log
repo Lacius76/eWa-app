@@ -1,0 +1,38 @@
+
+> ewa-app@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.0s
+  Running TypeScript ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/17) ...
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+  Generating static pages using 7 workers (4/17) 
+  Generating static pages using 7 workers (8/17) 
+  Generating static pages using 7 workers (12/17) 
+✓ Generating static pages using 7 workers (17/17) in 565.3ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /insurance
+├ ○ /login
+├ ○ /mobile-ticket
+├ ○ /onboarding
+├ ○ /parking
+├ ○ /parking-payment
+├ ○ /payment
+├ ○ /profile
+├ ○ /register
+├ ○ /splash
+├ ○ /success
+├ ○ /tickets
+└ ○ /wallet
+
+
+○  (Static)  prerendered as static content
+

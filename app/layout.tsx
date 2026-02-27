@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import BottomNavWrapper from '@/components/BottomNavWrapper';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: 'eWa - Super App',
   description: 'Your digital life in one app',
+  icons: {
+    icon: '/favicon.svg',
+  },
+  openGraph: {
+    images: ['/ewa-icon.jpg'],
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -31,10 +38,12 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl">
-          {children}
-          <BottomNavWrapper />
-        </div>
+        <Providers>
+          <div className="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl">
+            {children}
+            <BottomNavWrapper />
+          </div>
+        </Providers>
       </body>
     </html>
   );

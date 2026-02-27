@@ -9,7 +9,7 @@ interface CardProps {
 export default function Card({ children, className = '', withGlow = false }: CardProps) {
     return (
         <div
-            className={`bg-surface-dark rounded-2xl p-5 shadow-lg border border-white/5 relative overflow-hidden group ${className}`}
+            className={`bg-surface rounded-2xl p-5 shadow-lg border border-border relative overflow-hidden group ${className}`}
         >
             {/* Decorative Glow */}
             {withGlow && (
