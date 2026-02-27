@@ -4,18 +4,39 @@ import Link from 'next/link';
 import { useState, useRef } from 'react';
 import { motion, useDragControls, PanInfo } from 'framer-motion';
 
+// 3-state panel: 'collapsed' (peek), 'half' (default), 'full' (everything visible)
+type PanelState = 'collapsed' | 'half' | 'full';
+
 export default function Parking() {
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [panelState, setPanelState] = useState<PanelState>('half');
     const dragControls = useDragControls();
     const containerRef = useRef<HTMLDivElement>(null);
 
+    // y-offsets for each state (from top of the motion container's natural position)
+    // collapsed: show just handle + header (~120px visible above bottom nav)
+    // half: default comfortable view
+    // full: everything including Start Parking button
+    const panelVariants = {
+        collapsed: { y: "calc(100% - 140px)" },
+        half: { y: "calc(100% - 55%)" },
+        full: { y: 0 },
+    };
+
     const onDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-        // If dragged more than 50px, toggle state
-        if (info.offset.y > 50 && isExpanded) {
-            setIsExpanded(false);
-        } else if (info.offset.y < -50 && !isExpanded) {
-            setIsExpanded(true);
+        const velocity = info.velocity.y;
+        const offset = info.offset.y;
+
+        // Use velocity for quick flicks, offset for slow drags
+        if (velocity > 300 || (offset > 60 && velocity >= 0)) {
+            // Dragging down
+            if (panelState === 'full') setPanelState('half');
+            else setPanelState('collapsed');
+        } else if (velocity < -300 || (offset < -60 && velocity <= 0)) {
+            // Dragging up
+            if (panelState === 'collapsed') setPanelState('half');
+            else setPanelState('full');
         }
+        // Otherwise snap back to current state
     };
 
     return (
@@ -86,21 +107,18 @@ export default function Parking() {
             <motion.div
                 className="absolute bottom-0 left-0 right-0 z-20 flex flex-col justify-end pb-0"
                 initial={false}
-                animate={isExpanded ? "expanded" : "collapsed"}
-                variants={{
-                    expanded: { y: 0 },
-                    collapsed: { y: "calc(100% - 200px)" }
-                }}
+                animate={panelState}
+                variants={panelVariants}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
                 drag="y"
                 dragControls={dragControls}
                 dragListener={false} // Only drag using the handle
-                dragConstraints={{ top: 0, bottom: 0 }} // Constraints are relative to the animated position
-                dragElastic={0.05} // Minimal elasticity to feel solid but not revealing
+                dragConstraints={{ top: 0, bottom: 0 }}
+                dragElastic={0.05}
                 onDragEnd={onDragEnd}
             >
                 {/* Location Button (Floating above sheet) */}
-                <div className={`flex justify-end px-4 mb-4 transition-opacity duration-300 ${isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+                <div className={`flex justify-end px-4 mb-4 transition-opacity duration-300 ${panelState !== 'collapsed' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                     <button className="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-background shadow-neon hover:bg-primary-dark transition-all active:scale-95">
                         <span className="material-symbols-outlined">my_location</span>
                     </button>
@@ -111,7 +129,7 @@ export default function Parking() {
                     {/* Drag Handle - Clickable to toggle & Draggable */}
                     <div
                         onPointerDown={(e) => dragControls.start(e)}
-                        onClick={() => setIsExpanded(!isExpanded)}
+                        onClick={() => setPanelState(panelState === 'full' ? 'half' : panelState === 'half' ? 'full' : 'half')}
                         className="w-full flex justify-center pt-3 pb-1 cursor-grab active:cursor-grabbing active:bg-black/5 dark:active:bg-white/5 transition-colors touch-none"
                     >
                         <div className="w-12 h-1.5 rounded-full bg-text-secondary/50" />
