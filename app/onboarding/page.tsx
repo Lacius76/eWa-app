@@ -75,7 +75,7 @@ export default function Onboarding() {
             onTouchEnd={handleTouchEnd}
         >
             {/* Top Bar */}
-            <header className="flex items-center justify-end px-6 pt-8 pb-2 w-full z-10">
+            <header className="flex items-center justify-end px-6 pt-4 pb-2 w-full z-10">
                 <button
                     onClick={handleSkip}
                     className="text-primary/80 hover:text-primary text-sm font-semibold tracking-wide transition-colors duration-200"
@@ -85,9 +85,9 @@ export default function Onboarding() {
             </header>
 
             {/* Main Content Area */}
-            <main className="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative pb-32">
+            <main className="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative pb-24">
                 {/* Illustration Container */}
-                <div className="relative w-full flex items-center justify-center pt-12 pb-8">
+                <div className="relative w-full flex items-center justify-center pt-4 pb-4">
                     {/* Icon Container */}
                     <div className="relative z-10 flex items-center justify-center w-[160px] h-[160px] bg-gradient-to-br from-surface to-background rounded-[32px] border border-primary/20 shadow-[0_0_30px_rgba(6,249,249,0.1)]">
                         {currentScreen === 0 ? (
@@ -110,7 +110,7 @@ export default function Onboarding() {
                 </div>
 
                 {/* Text Content */}
-                <div className="text-center mt-12 space-y-4 max-w-xs mx-auto">
+                <div className="text-center mt-6 space-y-4 max-w-xs mx-auto">
                     <h1 className="text-[28px] font-bold tracking-tight text-text-primary leading-[1.2]">
                         {screen.title} <br />
                         <span className="text-primary">{screen.titleHighlight}</span>
@@ -122,10 +122,10 @@ export default function Onboarding() {
             </main>
 
             {/* Bottom Action Area */}
-            <footer className="absolute bottom-[40px] left-0 right-0 w-full px-6 z-20">
+            <footer className="absolute bottom-[48px] left-0 right-0 w-full px-6 z-20">
                 <div className="max-w-md mx-auto">
                     {/* Pagination Dots */}
-                    <div className="flex w-full flex-row items-center justify-center gap-2 mb-8">
+                    <div className="flex w-full flex-row items-center justify-center gap-2 mb-6">
                         {onboardingScreens.map((_, index) => (
                             <div
                                 key={index}
