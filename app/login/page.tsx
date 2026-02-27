@@ -39,9 +39,9 @@ export default function Login() {
             </div>
 
             {/* Main Content Container */}
-            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-[68px] pb-8 justify-end sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
+            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-[100px] pb-8 justify-start sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
                 {/* Header Section */}
-                <div className="flex flex-col items-center justify-center pt-8 pb-12">
+                <div className="flex flex-col items-center justify-center pb-8">
                     {/* Logo Icon */}
                     <div className="w-[120px] h-[120px] rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 shadow-[0_0_20px_rgba(6,249,249,0.1)]">
                         <img src="/ewa-icon.svg" alt="eWa Logo" className="w-[80px] h-[80px]" />
