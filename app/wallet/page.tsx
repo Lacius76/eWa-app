@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, MouseEvent } from 'react';
+import Link from 'next/link';
 
 export default function Wallet() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -48,11 +49,11 @@ export default function Wallet() {
                         <h2 className="text-lg font-bold text-text-primary leading-tight">Laszlo Foldvary</h2>
                     </div>
                 </div>
-                <button className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/20 hover:bg-primary/30 text-primary transition-colors">
+                <Link href="/notifications" className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/20 hover:bg-primary/30 text-primary transition-colors">
                     <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
                         notifications
                     </span>
-                </button>
+                </Link>
             </header>
 
             {/* Scrollable Content */}

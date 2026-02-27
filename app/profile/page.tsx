@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function Profile() {
     const router = useRouter();
@@ -25,9 +26,15 @@ export default function Profile() {
 
             {/* Header */}
             <header className="pt-4 pb-4 px-6 flex flex-col items-center gap-4 z-10 sticky top-0 bg-background/95 backdrop-blur-md border-b border-border">
-                <div className="w-full flex justify-between items-center mb-2">
-                    <h1 className="text-xl font-semibold tracking-tight text-text-primary">Profile</h1>
-                    <button className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors">
+                <div className="w-full flex justify-between items-center mb-2 relative">
+                    <Link
+                        href="/dashboard"
+                        className="w-10 h-10 -ml-2 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 text-text-primary transition-colors z-10"
+                    >
+                        <span className="material-symbols-outlined !text-[28px]">chevron_left</span>
+                    </Link>
+                    <h1 className="text-xl font-semibold tracking-tight text-text-primary absolute w-full text-center left-0 pointer-events-none">Profile</h1>
+                    <button className="w-10 h-10 -mr-2 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors z-10">
                         <span className="material-symbols-outlined text-text-primary">more_vert</span>
                     </button>
                 </div>

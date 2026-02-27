@@ -34,8 +34,8 @@ export default function Dashboard() {
         {/* Welcome Text - Fades out and shrinks when search is open */}
         <div
           className={`flex flex-col whitespace-nowrap transition-all duration-300 ease-in-out ${isSearchOpen
-              ? 'opacity-0 -translate-x-full w-0 pointer-events-none'
-              : 'opacity-100 translate-x-0 flex-1'
+            ? 'opacity-0 -translate-x-full w-0 pointer-events-none'
+            : 'opacity-100 translate-x-0 flex-1'
             }`}
         >
           <span className="text-sm font-medium text-text-secondary">Welcome back</span>
@@ -89,15 +89,15 @@ export default function Dashboard() {
 
           {/* Notifications & Avatar - Hide when search is open */}
           <div
-            className={`flex items-center gap-3 transition-all duration-300 ease-in-out origin-right whitespace-nowrap ${isSearchOpen ? 'w-0 opacity-0 scale-50 pointer-events-none' : 'w-auto opacity-100 scale-100'
+            className={`flex items-center gap-3 transition-all duration-300 ease-in-out origin-right whitespace-nowrap z-20 ${isSearchOpen ? 'w-0 opacity-0 scale-50 pointer-events-none' : 'w-auto opacity-100 scale-100 cursor-pointer pointer-events-auto'
               }`}
           >
-            <button className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
+            <Link href="/notifications" className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
               <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-primary ring-2 ring-surface" />
               <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '24px' }}>
                 notifications
               </span>
-            </button>
+            </Link>
             <Link href="/profile" className="h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-surface shadow-sm hover:ring-primary/30 transition-all cursor-pointer">
               <img
                 src="/img/laszlo.jpg"
