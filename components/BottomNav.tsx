@@ -54,7 +54,7 @@ export default function BottomNav() {
         })}
       </div>
       {/* iOS Home Indicator Spacing */}
-      <div className="h-6 w-full" />
+      <div className="h-3.5 w-full" />
     </nav>
   );
 }
