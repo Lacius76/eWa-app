@@ -70,7 +70,7 @@ export default function Onboarding() {
 
     return (
         <div
-            className="relative flex h-screen w-full flex-col overflow-hidden bg-background overscroll-none touch-pan-y"
+            className="relative flex h-[100dvh] w-full flex-col overflow-hidden bg-background overscroll-none touch-pan-y"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
         >
@@ -85,7 +85,7 @@ export default function Onboarding() {
             </header>
 
             {/* Main Content Area */}
-            <main className="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative pb-24">
+            <main className="flex-1 flex flex-col items-center justify-center px-6 w-full max-w-md mx-auto relative pb-32">
                 {/* Illustration Container */}
                 <div className="relative w-full flex items-center justify-center pt-4 pb-4">
                     {/* Icon Container */}
@@ -122,7 +122,7 @@ export default function Onboarding() {
             </main>
 
             {/* Bottom Action Area */}
-            <footer className="absolute bottom-[48px] left-0 right-0 w-full px-6 z-20">
+            <footer className="absolute bottom-[60px] left-0 right-0 w-full px-6 z-20">
                 <div className="max-w-md mx-auto">
                     {/* Pagination Dots */}
                     <div className="flex w-full flex-row items-center justify-center gap-2 mb-6">

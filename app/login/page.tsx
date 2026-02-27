@@ -29,7 +29,7 @@ export default function Login() {
     };
 
     return (
-        <div className="relative flex h-screen w-full flex-col overflow-hidden bg-background">
+        <div className="relative flex h-[100dvh] w-full flex-col overflow-hidden bg-background">
             {/* Abstract Background Pattern */}
             <div className="absolute inset-0 pointer-events-none z-0 opacity-30">
                 <svg width="100%" height="100%" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0">
@@ -39,7 +39,7 @@ export default function Login() {
             </div>
 
             {/* Main Content Container */}
-            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-12 pb-8 justify-end sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
+            <main className="flex-1 flex flex-col w-full max-w-md mx-auto px-6 relative z-10 pt-[68px] pb-8 justify-end sm:justify-center overflow-y-auto no-scrollbar overscroll-none">
                 {/* Header Section */}
                 <div className="flex flex-col items-center justify-center pt-8 pb-12">
                     {/* Logo Icon */}
