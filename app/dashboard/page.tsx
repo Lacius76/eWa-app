@@ -1,33 +1,111 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Dashboard() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isSearchOpen && searchInputRef.current) {
+      setTimeout(() => {
+        searchInputRef.current?.focus();
+      }, 150);
+    } else {
+      setSearchQuery('');
+    }
+  }, [isSearchOpen]);
+
+  const handleSearchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    searchInputRef.current?.focus();
+  };
+
   return (
     <>
       {/* Header Section */}
-      <header className="sticky top-0 z-30 flex items-center justify-between px-6 pt-4 pb-4 bg-background/90 backdrop-blur-md">
-        <div className="flex flex-col">
+      <header className="sticky top-0 z-30 flex items-center justify-between px-6 pt-4 pb-4 bg-background/90 backdrop-blur-md h-20 overflow-hidden">
+        {/* Welcome Text - Fades out and shrinks when search is open */}
+        <div
+          className={`flex flex-col whitespace-nowrap transition-all duration-300 ease-in-out ${isSearchOpen
+              ? 'opacity-0 -translate-x-full w-0 pointer-events-none'
+              : 'opacity-100 translate-x-0 flex-1'
+            }`}
+        >
           <span className="text-sm font-medium text-text-secondary">Welcome back</span>
-          <h1 className="text-2xl font-bold tracking-tight text-text-primary">Hello, Laszlo</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-text-primary hidden sm:block">Hello, Laszlo</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-text-primary block sm:hidden">Hi, Laszlo</h1>
         </div>
-        <div className="flex items-center gap-3">
-          <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
-            <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '24px' }}>
-              search
-            </span>
-          </button>
-          <button className="relative flex h-10 w-10 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
-            <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-primary ring-2 ring-surface" />
-            <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '24px' }}>
-              notifications
-            </span>
-          </button>
-          <Link href="/profile" className="h-10 w-10 overflow-hidden rounded-full ring-2 ring-surface shadow-sm hover:ring-primary/30 transition-all cursor-pointer">
-            <img
-              src="/img/laszlo.jpg"
-              alt="Laszlo Foldvary"
-              className="h-full w-full object-cover"
+
+        {/* Action Buttons & Search */}
+        <div className={`flex items-center gap-3 transition-all duration-300 ease-in-out ${isSearchOpen ? 'w-full justify-end' : ''}`}>
+
+          {/* Animated Search Container */}
+          <div
+            className={`relative flex items-center bg-surface shadow-sm ring-1 ring-border rounded-full transition-all duration-300 ease-in-out h-10 overflow-hidden ${isSearchOpen ? 'w-full px-1 flex-1 shadow-md' : 'w-10 justify-center hover:bg-surface-highlight'
+              }`}
+          >
+            {/* Search Icon / Toggle */}
+            <button
+              onClick={handleSearchToggle}
+              className={`flex h-10 items-center justify-center text-text-secondary hover:text-primary transition-colors z-10 ${isSearchOpen ? 'w-10' : 'w-full'}`}
+              aria-label="Toggle Search"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
+                {isSearchOpen ? 'arrow_back' : 'search'}
+              </span>
+            </button>
+
+            {/* Input Field */}
+            <input
+              ref={searchInputRef}
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`bg-transparent outline-none text-sm text-text-primary placeholder:text-text-secondary transition-all duration-300 ease-in-out h-full ${isSearchOpen ? 'w-full opacity-100 px-2' : 'w-0 opacity-0 px-0'
+                }`}
             />
-          </Link>
+
+            {/* Clear Button (X) */}
+            {isSearchOpen && (
+              <button
+                onClick={handleClearSearch}
+                className={`flex h-10 w-10 items-center justify-center text-text-secondary hover:text-text-primary transition-all duration-200 ${searchQuery ? 'opacity-100 scale-100' : 'opacity-0 scale-50 pointer-events-none'}`}
+                aria-label="Clear Search"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+                  close
+                </span>
+              </button>
+            )}
+          </div>
+
+          {/* Notifications & Avatar - Hide when search is open */}
+          <div
+            className={`flex items-center gap-3 transition-all duration-300 ease-in-out origin-right whitespace-nowrap ${isSearchOpen ? 'w-0 opacity-0 scale-50 pointer-events-none' : 'w-auto opacity-100 scale-100'
+              }`}
+          >
+            <button className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
+              <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-primary ring-2 ring-surface" />
+              <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '24px' }}>
+                notifications
+              </span>
+            </button>
+            <Link href="/profile" className="h-10 w-10 shrink-0 overflow-hidden rounded-full ring-2 ring-surface shadow-sm hover:ring-primary/30 transition-all cursor-pointer">
+              <img
+                src="/img/laszlo.jpg"
+                alt="Laszlo Foldvary"
+                className="h-full w-full object-cover"
+              />
+            </Link>
+          </div>
         </div>
       </header>
 

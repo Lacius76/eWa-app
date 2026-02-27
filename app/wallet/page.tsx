@@ -108,39 +108,43 @@ export default function Wallet() {
                                 </div>
                             </div>
 
-                            {/* Card 2 - Mastercard Credit */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-surface-highlight to-surface p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-border transform transition-transform hover:scale-[1.02] cursor-pointer group">
-                                <div className="flex justify-between items-start">
-                                    <span className="text-text-secondary font-medium text-sm tracking-widest">Credit</span>
-                                    <span className="material-symbols-outlined text-text-primary" style={{ fontSize: '28px' }}>
-                                        contactless
-                                    </span>
+                            {/* Card 2 - Request eWa Card */}
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-primary/10 to-surface p-4 flex flex-col justify-center items-center shadow-lg backdrop-blur-md border border-primary/30 transform transition-transform hover:scale-[1.02] group text-center relative overflow-hidden">
+                                {/* Decorative circle */}
+                                <div className="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-primary/20 blur-xl pointer-events-none"></div>
+                                <div className="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-accent/20 blur-xl pointer-events-none"></div>
+
+                                <div className="flex flex-col items-center flex-1 justify-center relative z-10 w-full">
+                                    <h3 className="text-text-primary font-bold text-lg leading-tight tracking-tight mt-1">Request a eWa card</h3>
+                                    <p className="text-text-secondary text-xs uppercase tracking-widest mt-1.5 font-medium">prepaid virtual bank card</p>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-2xl font-mono text-text-primary tracking-widest">••••</span>
-                                        <span className="text-2xl font-mono text-text-primary tracking-widest">••••</span>
-                                        <span className="text-2xl font-mono text-text-primary tracking-widest">8899</span>
-                                    </div>
-                                    <div className="flex justify-between items-end">
-                                        <div>
-                                            <p className="text-xs text-text-secondary uppercase font-medium">Card Holder</p>
-                                            <p className="text-sm text-text-primary font-medium tracking-wide">Laszlo Foldvary</p>
-                                        </div>
-                                        <div className="h-8 w-12 flex items-center justify-center bg-white/90 rounded">
-                                            <span className="text-[10px] font-bold text-orange-600">MC</span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                <button className="mt-3 w-full py-3 bg-primary hover:bg-primary-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(6,249,249,0.39)] transition-colors active:scale-[0.98] relative z-10">
+                                    Submit card request
+                                </button>
                             </div>
 
                             {/* Card 3 - Add New Card */}
-                            <div className="snap-start shrink-0 w-[140px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-primary/70 flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group">
-                                <div className="flex flex-col items-center gap-3">
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-primary/70 flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group relative p-4">
+                                <div className="flex flex-col items-center gap-3 mb-4">
                                     <div className="h-14 w-14 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all">
                                         <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">add</span>
                                     </div>
-                                    <span className="text-sm font-semibold text-center leading-tight px-2 text-text-primary">Add New<br />Card</span>
+                                    <span className="text-sm font-semibold text-center text-text-primary px-2">Add New Card</span>
+                                </div>
+                                <div className="absolute bottom-4 flex gap-2 w-full justify-center opacity-60 group-hover:opacity-100 transition-opacity">
+                                    <div className="h-6 w-8 bg-surface rounded flex items-center justify-center p-1 border border-border bg-white">
+                                        <img src="/cards/master.svg" alt="Mastercard" className="h-full w-full object-contain" />
+                                    </div>
+                                    <div className="h-6 w-8 bg-surface rounded flex items-center justify-center p-1 border border-border bg-white">
+                                        <img src="/cards/visa.svg" alt="Visa" className="h-full w-full object-contain" />
+                                    </div>
+                                    <div className="h-6 w-8 bg-surface rounded flex items-center justify-center p-1 border border-border bg-white">
+                                        <img src="/cards/american.svg" alt="American Express" className="h-full w-full object-contain" />
+                                    </div>
+                                    <div className="h-6 w-8 bg-surface rounded flex items-center justify-center p-1 border border-border bg-white">
+                                        <img src="/cards/maestro.svg" alt="Maestro" className="h-full w-full object-contain" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
