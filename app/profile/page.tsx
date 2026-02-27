@@ -24,7 +24,7 @@ export default function Profile() {
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none z-0"></div>
 
             {/* Header */}
-            <header className="pt-12 pb-8 px-6 flex flex-col items-center gap-4 z-10 sticky top-0 bg-background/95 backdrop-blur-md border-b border-border">
+            <header className="pt-4 pb-4 px-6 flex flex-col items-center gap-4 z-10 sticky top-0 bg-background/95 backdrop-blur-md border-b border-border">
                 <div className="w-full flex justify-between items-center mb-2">
                     <h1 className="text-xl font-semibold tracking-tight text-text-primary">Profile</h1>
                     <button className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5 active:bg-black/10 dark:active:bg-white/10 transition-colors">

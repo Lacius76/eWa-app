@@ -34,7 +34,7 @@ export default function Wallet() {
     return (
         <main className="flex-1 flex flex-col relative overflow-hidden h-screen">
             {/* Header */}
-            <header className="pt-12 pb-2 px-6 flex justify-between items-center z-10 bg-background/80 backdrop-blur-md sticky top-0">
+            <header className="pt-4 pb-4 px-6 flex justify-between items-center z-10 bg-background/80 backdrop-blur-md sticky top-0">
                 <div className="flex items-center gap-3">
                     <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-primary/20 to-accent/20 ring-2 ring-primary/30">
                         <img

@@ -86,7 +86,7 @@ export default function Parking() {
             </div>
 
             {/* Top Navigation Bar (Floating) */}
-            <div className="absolute top-0 left-0 right-0 z-10 pt-14 px-4 flex justify-between items-start pointer-events-none">
+            <div className="absolute top-0 left-0 right-0 z-10 pt-4 px-4 flex justify-between items-start pointer-events-none">
                 <Link
                     href="/dashboard"
                     className="pointer-events-auto w-10 h-10 flex items-center justify-center rounded-full bg-surface/80 backdrop-blur-md border border-border text-text-primary hover:bg-surface transition-colors shadow-lg"
