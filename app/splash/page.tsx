@@ -33,19 +33,17 @@ export default function Splash() {
             </div>
 
             {/* Logo + text */}
-            <div className="relative z-10 flex flex-col items-center gap-6">
-                {/* Logo container */}
-                <div className="w-28 h-28 rounded-3xl bg-gradient-to-br from-surface to-background border border-primary/25 shadow-neon flex items-center justify-center">
-                    <img src="/ewa-icon.svg" alt="eWa" className="w-16 h-16 object-contain" />
-                </div>
+            <div className="relative z-10 flex flex-col items-center gap-8">
+                {/* Main Logo */}
+                <img src="/ewa-icon-name.svg" alt="eWa" className="w-48 h-auto object-contain drop-shadow-xl" />
 
-                {/* App name */}
-                <div className="text-center">
-                    <h1 className="text-5xl font-extrabold text-primary tracking-tight leading-none">
-                        eWa
-                    </h1>
-                    <p className="text-text-secondary text-base font-medium mt-2 tracking-wide">
-                        Your Electronic Wallet
+                {/* Subtext */}
+                <div className="text-center flex flex-col gap-2">
+                    <p className="text-text-primary text-xl font-medium tracking-wide">
+                        Electronic Wallet
+                    </p>
+                    <p className="text-primary/80 text-sm font-semibold tracking-widest uppercase">
+                        Beta V. 0.2
                     </p>
                 </div>
             </div>
