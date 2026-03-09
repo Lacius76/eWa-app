@@ -59,7 +59,7 @@ export default function ParkingPayment() {
                         </div>
                         <div className="flex-1">
                             <p className="text-sm text-text-secondary mb-1">Location</p>
-                            <p className="text-lg font-semibold text-text-primary">
+                            <p className="text-lg font-semibold text-accent">
                                 Zone A – Mariahilf
                             </p>
                             <p className="text-xs text-text-secondary/80 mt-0.5">Mariahilfer Str. 1, 1060 Wien</p>

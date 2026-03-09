@@ -31,11 +31,11 @@ export default function BottomNav() {
               className="group flex flex-col items-center justify-center gap-1 w-16"
             >
               <div
-                className={`flex h-8 w-16 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-primary/20' : 'group-hover:bg-black/5 dark:group-hover:bg-white/5'
+                className={`flex h-8 w-16 items-center justify-center rounded-full transition-colors ${isActive ? 'bg-accent/20' : 'group-hover:bg-black/5 dark:group-hover:bg-white/5'
                   }`}
               >
                 <span
-                  className={`material-symbols-outlined text-[24px] ${isActive ? 'text-primary filled' : 'text-text-secondary'
+                  className={`material-symbols-outlined text-[24px] ${isActive ? 'text-accent filled' : 'text-text-secondary'
                     }`}
                 >
                   {item.icon}
@@ -43,7 +43,7 @@ export default function BottomNav() {
               </div>
               <span
                 className={`text-[11px] font-medium ${isActive
-                  ? 'text-primary font-semibold'
+                  ? 'text-accent font-semibold'
                   : 'text-text-secondary group-hover:text-text-primary'
                   }`}
               >

@@ -54,7 +54,7 @@ export default function Dashboard() {
             {/* Search Icon / Toggle */}
             <button
               onClick={handleSearchToggle}
-              className={`flex h-10 items-center justify-center text-text-secondary hover:text-primary transition-colors z-10 ${isSearchOpen ? 'w-10' : 'w-full'}`}
+              className={`flex h-10 items-center justify-center text-text-secondary hover:text-accent transition-colors z-10 ${isSearchOpen ? 'w-10' : 'w-full'}`}
               aria-label="Toggle Search"
             >
               <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
@@ -93,7 +93,7 @@ export default function Dashboard() {
               }`}
           >
             <Link href="/notifications" className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-surface shadow-sm ring-1 ring-border transition-colors hover:bg-surface-highlight">
-              <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-primary ring-2 ring-surface" />
+              <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-accent ring-2 ring-surface" />
               <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '24px' }}>
                 notifications
               </span>
@@ -175,7 +175,7 @@ export default function Dashboard() {
             </div>
             <div className="relative z-20 flex flex-row items-center justify-between h-full">
               <div className="flex flex-col justify-between h-full gap-4">
-                <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                   <span className="material-symbols-outlined filled" style={{ fontSize: '28px' }}>
                     local_parking
                   </span>
@@ -201,7 +201,7 @@ export default function Dashboard() {
             className="col-span-1 relative overflow-hidden rounded-3xl bg-surface p-5 shadow-sm ring-1 ring-border flex flex-col justify-between group h-44 transition-transform active:scale-[0.98]"
           >
             <div className="flex justify-between items-start">
-              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-accent/10 text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                 <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
                   confirmation_number
                 </span>

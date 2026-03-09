@@ -8,6 +8,7 @@
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
 
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -34,7 +35,8 @@
 :root {
   --primary: #10424F;
   --primary-dark: #082a33;
-  --accent: #7F00FF;
+  --accent: #6E00FF;
+  --accent-dark: #5A00D1;
 
   --background: #F1F5F9;
   --surface: #FFFFFF;
@@ -49,7 +51,8 @@
 .dark {
   --primary: #06f9f9;
   --primary-dark: #04c2c2;
-  --accent: #7F00FF;
+  --accent: #6E00FF;
+  --accent-dark: #5A00D1;
 
   --background: #0a0e17;
   --surface: #161b26;

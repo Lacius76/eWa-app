@@ -31,8 +31,8 @@ export default function Insurance() {
                 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/15 to-accent/15 border border-primary/20 p-5">
                     <div className="absolute -right-6 -top-6 w-24 h-24 rounded-full bg-primary/10 blur-2xl" />
                     <div className="flex items-center gap-4 relative z-10">
-                        <div className="w-12 h-12 rounded-2xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0">
-                            <span className="material-symbols-outlined text-primary text-2xl filled">shield_lock</span>
+                        <div className="w-12 h-12 rounded-2xl bg-accent/20 border border-accent/30 flex items-center justify-center shrink-0">
+                            <span className="material-symbols-outlined text-accent text-2xl filled">shield_lock</span>
                         </div>
                         <div className="flex-1">
                             <p className="text-text-primary font-bold text-sm leading-snug">
@@ -43,7 +43,7 @@ export default function Insurance() {
                             </p>
                         </div>
                     </div>
-                    <button className="mt-4 w-full py-2.5 rounded-xl bg-primary text-background text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
+                    <button className="mt-4 w-full py-2.5 rounded-xl bg-accent text-background text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
                         <span className="material-symbols-outlined text-lg">add_circle</span>
                         Register Insurance
                     </button>

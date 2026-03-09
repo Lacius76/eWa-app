@@ -6,11 +6,11 @@ export default function Success() {
             {/* Success Animation Container */}
             <div className="relative mb-8">
                 {/* Pulse Effect */}
-                <div className="absolute inset-0 rounded-full bg-primary/20 animate-ping" />
-                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl" />
+                <div className="absolute inset-0 rounded-full bg-accent/20 animate-ping" />
+                <div className="absolute inset-0 rounded-full bg-accent/10 blur-2xl" />
 
                 {/* Check Icon */}
-                <div className="relative w-32 h-32 rounded-full bg-primary flex items-center justify-center shadow-neon">
+                <div className="relative w-32 h-32 rounded-full bg-accent flex items-center justify-center shadow-neon">
                     <span className="material-symbols-outlined text-background" style={{ fontSize: '64px', fontWeight: 'bold' }}>
                         check
                     </span>
@@ -47,7 +47,7 @@ export default function Success() {
             <div className="w-full max-w-sm space-y-3">
                 <Link
                     href="/dashboard"
-                    className="w-full bg-primary hover:bg-primary-dark text-background font-bold py-4 rounded-xl shadow-neon transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+                    className="w-full bg-accent hover:bg-accent-dark text-background font-bold py-4 rounded-xl shadow-neon transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
                 >
                     <span>Back to Home</span>
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">

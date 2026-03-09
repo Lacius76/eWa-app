@@ -39,10 +39,10 @@ export default function Splash() {
 
                 {/* Subtext */}
                 <div className="text-center flex flex-col gap-2">
-                    <p className="text-text-primary text-xl font-medium tracking-wide">
+                    <p className="text-accent text-xl font-medium tracking-wide">
                         Electronic Wallet
                     </p>
-                    <p className="text-primary/80 text-sm font-semibold tracking-widest uppercase">
+                    <p className="text-accent/80 text-sm font-semibold tracking-widest uppercase">
                         Beta V. 0.2
                     </p>
                 </div>

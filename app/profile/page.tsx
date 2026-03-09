@@ -41,14 +41,14 @@ export default function Profile() {
                 <div className="flex flex-col items-center gap-3">
                     {/* Avatar */}
                     <div className="relative">
-                        <div className="w-24 h-24 rounded-full bg-surface flex items-center justify-center border-2 border-primary/30 shadow-[0_0_20px_rgba(6,249,249,0.15)] overflow-hidden">
+                        <div className="w-24 h-24 rounded-full bg-surface flex items-center justify-center border-2 border-accent/30 shadow-[0_0_20px_rgba(110,0,255,0.15)] overflow-hidden">
                             <img
                                 src="/img/laszlo.jpg"
                                 alt="Laszlo Földvary"
                                 className="h-full w-full object-cover"
                             />
                         </div>
-                        <button className="absolute bottom-0 right-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-background shadow-lg border-2 border-background hover:bg-primary/90 transition-colors">
+                        <button className="absolute bottom-0 right-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-background shadow-lg border-2 border-background hover:bg-accent-dark transition-colors">
                             <span className="material-symbols-outlined text-sm font-bold">edit</span>
                         </button>
                     </div>
@@ -64,53 +64,53 @@ export default function Profile() {
             <main className="flex-1 flex flex-col w-full z-0 overflow-y-auto pb-32">
                 {/* Account Section */}
                 <div className="px-6 py-6">
-                    <h3 className="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-4 pl-1">Account</h3>
+                    <h3 className="text-xs font-semibold text-accent/80 uppercase tracking-wider mb-4 pl-1">Account</h3>
                     <div className="flex flex-col gap-2">
                         {/* Personal Info */}
-                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10">
+                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10">
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">badge</span>
+                                <span className="material-symbols-outlined text-accent">badge</span>
                                 <span className="text-text-primary font-medium text-base">Personal Info</span>
                             </div>
-                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">chevron_right</span>
+                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">chevron_right</span>
                         </button>
 
                         {/* Payment Methods */}
-                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10">
+                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10">
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">credit_card</span>
+                                <span className="material-symbols-outlined text-accent">credit_card</span>
                                 <span className="text-text-primary font-medium text-base">Payment Methods</span>
                             </div>
-                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">chevron_right</span>
+                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">chevron_right</span>
                         </button>
 
                         {/* Security */}
-                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10">
+                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10">
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">lock</span>
+                                <span className="material-symbols-outlined text-accent">lock</span>
                                 <span className="text-text-primary font-medium text-base">Security</span>
                             </div>
-                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">chevron_right</span>
+                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">chevron_right</span>
                         </button>
                     </div>
                 </div>
 
                 {/* App Settings Section */}
                 <div className="px-6 pb-6">
-                    <h3 className="text-xs font-semibold text-primary/80 uppercase tracking-wider mb-4 pl-1">App Settings</h3>
+                    <h3 className="text-xs font-semibold text-accent/80 uppercase tracking-wider mb-4 pl-1">App Settings</h3>
                     <div className="flex flex-col gap-2">
                         {/* Notifications */}
-                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10">
+                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10">
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">notifications</span>
+                                <span className="material-symbols-outlined text-accent">notifications</span>
                                 <span className="text-text-primary font-medium text-base">Notifications</span>
                             </div>
-                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">chevron_right</span>
+                            <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">chevron_right</span>
                         </button>
 
                         {/* Appearance */}
                         <div
-                            className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10 cursor-pointer select-none"
+                            className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10 cursor-pointer select-none"
                             onClick={() => {
                                 if (theme === 'system') setTheme('light');
                                 else if (theme === 'light') setTheme('dark');
@@ -118,26 +118,26 @@ export default function Profile() {
                             }}
                         >
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">dark_mode</span>
+                                <span className="material-symbols-outlined text-accent">dark_mode</span>
                                 <span className="text-text-primary font-medium text-base">Appearance</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-text-secondary text-sm capitalize">
                                     {mounted ? theme : 'System'}
                                 </span>
-                                <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">sync</span>
+                                <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">sync</span>
                             </div>
                         </div>
 
                         {/* Language */}
-                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-primary/10">
+                        <button className="flex items-center justify-between group w-full bg-surface/50 hover:bg-surface p-4 rounded-xl transition-all border border-transparent hover:border-accent/10">
                             <div className="flex items-center gap-4">
-                                <span className="material-symbols-outlined text-primary">language</span>
+                                <span className="material-symbols-outlined text-accent">language</span>
                                 <span className="text-text-primary font-medium text-base">Language</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <span className="text-text-secondary text-sm">English</span>
-                                <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-primary/70 transition-colors">chevron_right</span>
+                                <span className="material-symbols-outlined text-text-secondary/50 text-xl group-hover:text-accent/70 transition-colors">chevron_right</span>
                             </div>
                         </button>
                     </div>
@@ -149,8 +149,8 @@ export default function Profile() {
                         onClick={handleLogout}
                         className="w-full py-4 rounded-xl bg-surface border border-border hover:bg-surface/80 active:bg-surface/60 transition-all flex items-center justify-center gap-2 group"
                     >
-                        <span className="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">logout</span>
-                        <span className="text-primary font-bold text-base">Log Out</span>
+                        <span className="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">logout</span>
+                        <span className="text-accent font-bold text-base">Log Out</span>
                     </button>
                     <p className="text-center text-text-secondary/50 text-xs mt-6 pb-4">Version 2.4.0 (Build 302)</p>
                 </div>

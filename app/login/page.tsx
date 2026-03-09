@@ -46,7 +46,7 @@ export default function Login() {
                     <div className="w-[120px] h-[120px] rounded-2xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20 shadow-[0_0_20px_rgba(6,249,249,0.1)]">
                         <img src="/ewa-icon.svg" alt="eWa Logo" className="w-[80px] h-[80px]" />
                     </div>
-                    <h1 className="text-primary/80 tracking-tight text-lg font-semibold leading-tight text-center">Electronic Wallet</h1>
+                    <h1 className="text-accent/80 tracking-tight text-lg font-semibold leading-tight text-center">Electronic Wallet</h1>
                     <p className="text-text-secondary text-sm font-medium mt-2">Welcome back to the future of finance</p>
                 </div>
 
@@ -118,7 +118,7 @@ export default function Login() {
 
                     {/* Sign In Button */}
                     <button
-                        className="w-full h-14 flex justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-background bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all duration-200 mt-4"
+                        className="w-full h-14 flex justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-background bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all duration-200 mt-4"
                         type="submit"
                     >
                         Sign In

@@ -74,7 +74,7 @@ export default function EntertainmentTickets() {
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`flex-1 py-3 text-sm font-semibold transition-all border-b-2 capitalize ${activeTab === tab
-                                ? 'text-primary border-primary'
+                                ? 'text-accent border-accent'
                                 : 'text-text-secondary border-transparent hover:text-text-primary'
                                 }`}
                         >
@@ -123,7 +123,7 @@ export default function EntertainmentTickets() {
                                 {/* Price / Action */}
                                 <div className="flex flex-col items-end shrink-0">
                                     <span className="text-primary font-bold text-base">{event.price}</span>
-                                    <button className="mt-2 px-3 py-1.5 bg-primary/10 rounded-lg border border-primary/20 text-primary text-xs font-bold hover:bg-primary/20 transition-colors active:bg-primary/30">
+                                    <button className="mt-2 px-3 py-1.5 bg-accent/10 rounded-lg border border-accent/20 text-accent text-xs font-bold hover:bg-accent/20 transition-colors active:bg-accent/30">
                                         Get
                                     </button>
                                 </div>

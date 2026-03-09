@@ -181,19 +181,19 @@ export default function Parking() {
                         {/* Amenities/Features Row */}
                         <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2 mb-4">
                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-border text-xs text-text-primary/80 whitespace-nowrap">
-                                <span className="material-symbols-outlined text-[16px] text-primary">roofing</span>
+                                <span className="material-symbols-outlined text-[16px] text-accent">roofing</span>
                                 Covered
                             </div>
                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-border text-xs text-text-primary/80 whitespace-nowrap">
-                                <span className="material-symbols-outlined text-[16px] text-primary">videocam</span>
+                                <span className="material-symbols-outlined text-[16px] text-accent">videocam</span>
                                 CCTV
                             </div>
                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-border text-xs text-text-primary/80 whitespace-nowrap">
-                                <span className="material-symbols-outlined text-[16px] text-primary">ev_station</span>
+                                <span className="material-symbols-outlined text-[16px] text-accent">ev_station</span>
                                 EV Charging
                             </div>
                             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 dark:bg-white/5 border border-border text-xs text-text-primary/80 whitespace-nowrap">
-                                <span className="material-symbols-outlined text-[16px] text-primary">accessible</span>
+                                <span className="material-symbols-outlined text-[16px] text-accent">accessible</span>
                                 Accessible
                             </div>
                         </div>
@@ -219,7 +219,7 @@ export default function Parking() {
                         {/* Main CTA */}
                         <Link
                             href="/parking-payment"
-                            className="w-full h-14 bg-primary hover:bg-primary-dark active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 shadow-neon group relative overflow-hidden mb-24"
+                            className="w-full h-14 bg-accent hover:bg-accent-dark active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 shadow-neon group relative overflow-hidden mb-24"
                         >
                             <span className="material-symbols-outlined text-background font-bold group-hover:rotate-12 transition-transform">
                                 local_parking

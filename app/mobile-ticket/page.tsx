@@ -122,7 +122,7 @@ export default function Tickets() {
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             className={`flex-1 py-3 text-sm font-semibold transition-all border-b-2 ${activeTab === tab
-                                ? 'text-primary border-primary'
+                                ? 'text-accent border-accent'
                                 : 'text-text-secondary border-transparent hover:text-text-primary'
                                 }`}
                         >

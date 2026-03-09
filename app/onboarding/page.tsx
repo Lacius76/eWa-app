@@ -113,7 +113,7 @@ export default function Onboarding() {
                 <div className="text-center mt-6 space-y-4 max-w-xs mx-auto">
                     <h1 className="text-[28px] font-bold tracking-tight text-text-primary leading-[1.2]">
                         {screen.title} <br />
-                        <span className="text-primary">{screen.titleHighlight}</span>
+                        <span className="text-accent">{screen.titleHighlight}</span>
                     </h1>
                     <p className="text-text-secondary text-base leading-relaxed font-normal mt-4">
                         {screen.description}
@@ -139,7 +139,7 @@ export default function Onboarding() {
 
                     <button
                         onClick={handleNext}
-                        className="group flex w-full h-14 items-center justify-center gap-2 rounded-2xl bg-primary text-[18px] font-semibold text-background shadow-lg shadow-primary/30 transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
+                        className="group flex w-full h-14 items-center justify-center gap-2 rounded-2xl bg-accent text-[18px] font-semibold text-background shadow-lg shadow-accent/30 transition-all duration-300 hover:bg-accent/90 active:scale-[0.98]"
                     >
                         {currentScreen < onboardingScreens.length - 1 ? 'Next' : 'Get Started'}
                         <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">

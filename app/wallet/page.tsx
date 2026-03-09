@@ -49,7 +49,7 @@ export default function Wallet() {
                         <h2 className="text-lg font-bold text-text-primary leading-tight">Laszlo Foldvary</h2>
                     </div>
                 </div>
-                <Link href="/notifications" className="flex items-center justify-center h-10 w-10 rounded-full bg-primary/20 hover:bg-primary/30 text-primary transition-colors">
+                <Link href="/notifications" className="flex items-center justify-center h-10 w-10 rounded-full bg-accent/20 hover:bg-accent/30 text-accent transition-colors">
                     <span className="material-symbols-outlined" style={{ fontSize: '24px' }}>
                         notifications
                     </span>
@@ -120,7 +120,7 @@ export default function Wallet() {
                                     <p className="text-text-secondary text-xs uppercase tracking-widest mt-1.5 font-medium">prepaid virtual bank card</p>
                                 </div>
 
-                                <button className="mt-3 w-full py-3 bg-primary hover:bg-primary-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(6,249,249,0.39)] transition-colors active:scale-[0.98] relative z-10">
+                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(6,249,249,0.39)] transition-colors active:scale-[0.98] relative z-10">
                                     Submit card request
                                 </button>
                             </div>
