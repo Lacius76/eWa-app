@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import pkg from '../../package.json';
 
 export default function Profile() {
     const router = useRouter();
@@ -152,7 +153,7 @@ export default function Profile() {
                         <span className="material-symbols-outlined text-accent group-hover:scale-110 transition-transform">logout</span>
                         <span className="text-accent font-bold text-base">Log Out</span>
                     </button>
-                    <p className="text-center text-text-secondary/50 text-xs mt-6 pb-4">Version 2.4.0 (Build 302)</p>
+                    <p className="text-center text-text-secondary/50 text-xs mt-6 pb-4">Version {pkg.version}</p>
                 </div>
             </main>
         </div>

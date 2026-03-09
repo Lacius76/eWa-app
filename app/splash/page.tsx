@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import packageInfo from '../../package.json';
 
 export default function Splash() {
     const router = useRouter();
@@ -43,7 +44,7 @@ export default function Splash() {
                         Electronic Wallet
                     </p>
                     <p className="text-accent/80 text-sm font-semibold tracking-widest uppercase">
-                        Beta V. 0.2
+                        Version {packageInfo.version}
                     </p>
                 </div>
             </div>
