@@ -43,10 +43,9 @@ export default function Payment() {
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col px-4 pt-6 pb-24 overflow-y-auto no-scrollbar max-w-md mx-auto w-full">
-                {/* Summary Section Title */}
                 <div className="flex items-center gap-2 mb-4">
                     <h2 className="text-2xl font-bold text-text-primary tracking-tight">E-Vignette Summary</h2>
-                    <span className="material-symbols-outlined text-primary filled">verified</span>
+                    <span className="material-symbols-outlined text-accent filled">verified</span>
                 </div>
 
                 {/* Main Card */}
@@ -54,7 +53,7 @@ export default function Payment() {
                     {/* Vehicle Info */}
                     <div className="flex items-start gap-4">
                         <div className="w-12 h-12 rounded-xl bg-surface-highlight flex items-center justify-center shrink-0 border border-border shadow-inner">
-                            <span className="material-symbols-outlined text-primary text-2xl">directions_car</span>
+                            <span className="material-symbols-outlined text-accent text-2xl">directions_car</span>
                         </div>
                         <div className="flex-1">
                             <p className="text-sm text-text-secondary mb-1">Vehicle Type</p>
@@ -85,17 +84,16 @@ export default function Payment() {
                     <div>
                         <h3 className="text-sm font-semibold text-text-primary mb-3">Select Vignette Type</h3>
                         <div className="bg-surface rounded-2xl p-1 border border-border space-y-1">
-                            {/* 3-Day Option */}
                             <label
                                 className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedVignette === '3day'
-                                    ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                    ? 'bg-surface-highlight border border-accent/30 shadow-neon'
                                     : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                     }`}
                                 onClick={() => setSelectedVignette('3day')}
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-border">
-                                        <span className="text-primary text-xl font-bold">3</span>
+                                        <span className="text-accent text-xl font-bold">3</span>
                                         <span className="text-[7px] text-text-secondary uppercase">Days</span>
                                     </div>
                                     <div>
@@ -105,7 +103,7 @@ export default function Payment() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-lg font-bold text-primary">€10</span>
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '3day' ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary'
+                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '3day' ? 'bg-accent shadow-neon' : 'border-2 border-text-secondary'
                                         }`}>
                                         {selectedVignette === '3day' && (
                                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
@@ -115,17 +113,16 @@ export default function Payment() {
                                 <input className="sr-only" type="radio" name="vignette" checked={selectedVignette === '3day'} readOnly />
                             </label>
 
-                            {/* 10-Day Option */}
                             <label
                                 className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedVignette === '10day'
-                                    ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                    ? 'bg-surface-highlight border border-accent/30 shadow-neon'
                                     : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                     }`}
                                 onClick={() => setSelectedVignette('10day')}
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-border">
-                                        <span className="text-primary text-xl font-bold">10</span>
+                                        <span className="text-accent text-xl font-bold">10</span>
                                         <span className="text-[7px] text-text-secondary uppercase">Days</span>
                                     </div>
                                     <div>
@@ -135,7 +132,7 @@ export default function Payment() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-lg font-bold text-primary">€25</span>
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '10day' ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary'
+                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '10day' ? 'bg-accent shadow-neon' : 'border-2 border-text-secondary'
                                         }`}>
                                         {selectedVignette === '10day' && (
                                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
@@ -145,17 +142,16 @@ export default function Payment() {
                                 <input className="sr-only" type="radio" name="vignette" checked={selectedVignette === '10day'} readOnly />
                             </label>
 
-                            {/* 30-Day Option */}
                             <label
                                 className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedVignette === '30day'
-                                    ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                    ? 'bg-surface-highlight border border-accent/30 shadow-neon'
                                     : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                     }`}
                                 onClick={() => setSelectedVignette('30day')}
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-border">
-                                        <span className="text-primary text-xl font-bold">30</span>
+                                        <span className="text-accent text-xl font-bold">30</span>
                                         <span className="text-[7px] text-text-secondary uppercase">Days</span>
                                     </div>
                                     <div>
@@ -165,7 +161,7 @@ export default function Payment() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-lg font-bold text-primary">€30</span>
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '30day' ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary'
+                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '30day' ? 'bg-accent shadow-neon' : 'border-2 border-text-secondary'
                                         }`}>
                                         {selectedVignette === '30day' && (
                                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
@@ -175,17 +171,16 @@ export default function Payment() {
                                 <input className="sr-only" type="radio" name="vignette" checked={selectedVignette === '30day'} readOnly />
                             </label>
 
-                            {/* 1-Year Option */}
                             <label
                                 className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedVignette === '1year'
-                                    ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                    ? 'bg-surface-highlight border border-accent/30 shadow-neon'
                                     : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                     }`}
                                 onClick={() => setSelectedVignette('1year')}
                             >
                                 <div className="flex items-center gap-3">
                                     <div className="flex flex-col items-center justify-center w-12 h-12 bg-surface-highlight rounded-lg border border-border">
-                                        <span className="text-primary text-xl font-bold">1</span>
+                                        <span className="text-accent text-xl font-bold">1</span>
                                         <span className="text-[7px] text-text-secondary uppercase">Year</span>
                                     </div>
                                     <div>
@@ -195,7 +190,7 @@ export default function Payment() {
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <span className="text-lg font-bold text-primary">€80</span>
-                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '1year' ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary'
+                                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedVignette === '1year' ? 'bg-accent shadow-neon' : 'border-2 border-text-secondary'
                                         }`}>
                                         {selectedVignette === '1year' && (
                                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
@@ -235,7 +230,7 @@ export default function Payment() {
                 <h3 className="text-lg font-semibold text-text-primary mt-8 mb-4 px-1">Payment Method</h3>
                 <div className="bg-surface rounded-2xl p-1 border border-border space-y-1">
                     {/* Selected Option */}
-                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer bg-surface-highlight border border-primary/30 shadow-neon transition-all">
+                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer bg-surface-highlight border border-accent/30 shadow-neon transition-all">
                         <div className="w-12 h-8 bg-gradient-to-br from-slate-700 to-slate-900 rounded border border-border flex items-center justify-center relative overflow-hidden shadow-sm">
                             <div className="absolute top-2 left-2 w-1.5 h-1 bg-yellow-500/80 rounded-[1px]" />
                             <span className="relative z-10 font-bold italic text-xs text-white/90 tracking-tighter">VISA</span>
@@ -244,7 +239,7 @@ export default function Payment() {
                             <p className="text-text-primary font-medium text-sm">Super App Virtual Card</p>
                             <p className="text-text-secondary text-xs">•••• 4589 • Exp 12/26</p>
                         </div>
-                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-neon">
+                        <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-neon">
                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
                         </div>
                         <input checked className="sr-only" name="payment_method" type="radio" readOnly />
@@ -264,7 +259,7 @@ export default function Payment() {
                     </label>
 
                     <button className="w-full py-3 text-center text-primary text-sm font-medium hover:text-primary-dark transition-colors flex items-center justify-center gap-2">
-                        <span className="material-symbols-outlined text-lg">add_circle</span>
+                        <span className="material-symbols-outlined text-accent text-lg">add_circle</span>
                         Add New Method
                     </button>
                 </div>

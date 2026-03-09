@@ -215,7 +215,7 @@ export default function Tickets() {
                                 key={ticket.id}
                                 onClick={() => setSelectedTicket(ticket.id)}
                                 className={`w-full relative flex items-center justify-between p-4 rounded-2xl border transition-all text-left ${selectedTicket === ticket.id
-                                    ? 'bg-surface-highlight border-primary/40 shadow-neon'
+                                    ? 'bg-surface-highlight border-accent/40 shadow-neon'
                                     : 'bg-surface border-border hover:border-black/20 dark:hover:border-white/20'
                                     }`}
                             >
@@ -227,9 +227,9 @@ export default function Tickets() {
                                 )}
 
                                 <div className="flex items-center gap-3">
-                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${selectedTicket === ticket.id ? 'bg-primary/20' : 'bg-black/5 dark:bg-white/5'
+                                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${selectedTicket === ticket.id ? 'bg-accent/20' : 'bg-black/5 dark:bg-white/5'
                                         }`}>
-                                        <span className={`material-symbols-outlined text-xl ${selectedTicket === ticket.id ? 'text-primary' : 'text-text-secondary'
+                                        <span className={`material-symbols-outlined text-xl ${selectedTicket === ticket.id ? 'text-accent' : 'text-text-secondary'
                                             }`}>
                                             {ticket.id === 'single' ? 'confirmation_number'
                                                 : ticket.id === 'day' ? 'today'
@@ -246,7 +246,7 @@ export default function Tickets() {
                                 <div className="flex items-center gap-3 shrink-0">
                                     <span className="text-primary font-bold text-base">€{ticket.price.toFixed(2)}</span>
                                     <div className={`w-5 h-5 rounded-full flex items-center justify-center ${selectedTicket === ticket.id
-                                        ? 'bg-primary shadow-neon'
+                                        ? 'bg-accent shadow-neon'
                                         : 'border-2 border-text-secondary'
                                         }`}>
                                         {selectedTicket === ticket.id && (
@@ -278,7 +278,7 @@ export default function Tickets() {
                             onClick={() => selectedTicket && router.push('/success')}
                             disabled={!selectedTicket}
                             className={`w-full flex items-center justify-center gap-2 py-4 rounded-xl text-base font-bold transition-all ${selectedTicket
-                                ? 'bg-primary text-background shadow-neon active:scale-[0.98]'
+                                ? 'bg-accent text-white shadow-neon active:scale-[0.98]'
                                 : 'bg-surface text-text-secondary cursor-not-allowed'
                                 }`}
                         >

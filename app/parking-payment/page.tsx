@@ -47,7 +47,7 @@ export default function ParkingPayment() {
                 {/* Title */}
                 <div className="flex items-center gap-2 mb-4">
                     <h2 className="text-2xl font-bold text-text-primary tracking-tight">Parking Summary</h2>
-                    <span className="material-symbols-outlined text-primary filled">local_parking</span>
+                    <span className="material-symbols-outlined text-accent filled">local_parking</span>
                 </div>
 
                 {/* Main Card */}
@@ -88,7 +88,7 @@ export default function ParkingPayment() {
                                 <label
                                     key={key}
                                     className={`relative flex items-center justify-between p-4 rounded-xl cursor-pointer transition-all ${selectedDuration === key
-                                        ? 'bg-surface-highlight border border-primary/30 shadow-neon'
+                                        ? 'bg-surface-highlight border border-accent/30 shadow-neon'
                                         : 'hover:bg-black/5 dark:hover:bg-white/5 opacity-70 hover:opacity-100'
                                         }`}
                                     onClick={() => setSelectedDuration(key)}
@@ -105,7 +105,7 @@ export default function ParkingPayment() {
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <span className="text-lg font-bold text-primary">€{opt.price}</span>
-                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedDuration === key ? 'bg-primary shadow-neon' : 'border-2 border-text-secondary/50'
+                                        <div className={`w-6 h-6 rounded-full flex items-center justify-center ${selectedDuration === key ? 'bg-accent shadow-neon' : 'border-2 border-text-secondary/50'
                                             }`}>
                                             {selectedDuration === key && (
                                                 <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
@@ -138,10 +138,9 @@ export default function ParkingPayment() {
                     </div>
                 </Card>
 
-                {/* Payment Method */}
                 <h3 className="text-lg font-semibold text-text-primary mt-8 mb-4 px-1">Payment Method</h3>
                 <div className="bg-surface rounded-2xl p-1 border border-border space-y-1">
-                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer bg-surface-highlight border border-primary/30 shadow-neon transition-all">
+                    <label className="relative flex items-center gap-4 p-4 rounded-xl cursor-pointer bg-surface-highlight border border-accent/30 shadow-neon transition-all">
                         <div className="w-12 h-8 bg-gradient-to-br from-slate-700 to-slate-900 rounded border border-white/10 flex items-center justify-center relative overflow-hidden shadow-sm">
                             <div className="absolute top-2 left-2 w-1.5 h-1 bg-yellow-500/80 rounded-[1px]" />
                             <span className="relative z-10 font-bold italic text-xs text-white/90 tracking-tighter">VISA</span>
@@ -150,7 +149,7 @@ export default function ParkingPayment() {
                             <p className="text-text-primary font-medium text-sm">Super App Virtual Card</p>
                             <p className="text-text-secondary text-xs">•••• 4589 • Exp 12/26</p>
                         </div>
-                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-neon">
+                        <div className="w-6 h-6 rounded-full bg-accent flex items-center justify-center shadow-neon">
                             <span className="material-symbols-outlined text-background text-sm font-bold">check</span>
                         </div>
                         <input checked className="sr-only" name="payment_method" type="radio" readOnly />
@@ -167,7 +166,7 @@ export default function ParkingPayment() {
                         <input className="sr-only" name="payment_method" type="radio" />
                     </label>
                     <button className="w-full py-3 text-center text-primary text-sm font-medium hover:text-primary-dark transition-colors flex items-center justify-center gap-2">
-                        <span className="material-symbols-outlined text-lg">add_circle</span>
+                        <span className="material-symbols-outlined text-accent text-lg">add_circle</span>
                         Add New Method
                     </button>
                 </div>

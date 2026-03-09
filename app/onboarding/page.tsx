@@ -89,7 +89,7 @@ export default function Onboarding() {
                 {/* Illustration Container */}
                 <div className="relative w-full flex items-center justify-center pt-4 pb-4">
                     {/* Icon Container */}
-                    <div className="relative z-10 flex items-center justify-center w-[160px] h-[160px] bg-gradient-to-br from-surface to-background rounded-[32px] border border-primary/20 shadow-[0_0_30px_rgba(6,249,249,0.1)]">
+                    <div className="relative z-10 flex items-center justify-center w-[160px] h-[160px] bg-gradient-to-br from-surface to-background rounded-[32px] border border-accent/20 shadow-[0_0_30px_rgba(110,0,255,0.1)]">
                         {currentScreen === 0 ? (
                             <img
                                 src="/ewa-icon.svg"
@@ -98,14 +98,14 @@ export default function Onboarding() {
                             />
                         ) : (
                             <span
-                                className="material-symbols-outlined text-primary filled"
+                                className="material-symbols-outlined text-accent filled"
                                 style={{ fontSize: '64px', fontVariationSettings: "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48" }}
                             >
                                 {screen.icon}
                             </span>
                         )}
                         {/* Decorative Element */}
-                        <div className="absolute top-3 right-3 w-2 h-2 bg-primary rounded-full shadow-[0_0_8px_rgba(6,249,249,0.8)]"></div>
+                        <div className="absolute top-3 right-3 w-2 h-2 bg-accent rounded-full shadow-[0_0_8px_rgba(110,0,255,0.8)]"></div>
                     </div>
                 </div>
 

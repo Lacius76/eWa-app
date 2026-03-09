@@ -119,7 +119,7 @@ export default function Parking() {
             >
                 {/* Location Button (Floating above sheet) */}
                 <div className={`flex justify-end px-4 mb-4 transition-opacity duration-300 ${panelState !== 'collapsed' ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-                    <button className="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-background shadow-neon hover:bg-primary-dark transition-all active:scale-95">
+                    <button className="w-12 h-12 flex items-center justify-center rounded-full bg-accent text-white shadow-neon hover:bg-accent-dark transition-all active:scale-95">
                         <span className="material-symbols-outlined">my_location</span>
                     </button>
                 </div>

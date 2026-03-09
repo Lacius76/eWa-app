@@ -126,10 +126,10 @@ export default function Wallet() {
                             </div>
 
                             {/* Card 3 - Add New Card */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-primary/70 flex flex-col items-center justify-center text-text-secondary hover:text-primary transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group relative p-4">
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-accent/70 flex flex-col items-center justify-center text-text-secondary hover:text-accent transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group relative p-4">
                                 <div className="flex flex-col items-center gap-3 mb-4">
-                                    <div className="h-14 w-14 rounded-full bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-all">
-                                        <span className="material-symbols-outlined text-4xl text-primary group-hover:scale-110 transition-transform">add</span>
+                                    <div className="h-14 w-14 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center transition-all">
+                                        <span className="material-symbols-outlined text-4xl text-accent group-hover:scale-110 transition-transform">add</span>
                                     </div>
                                     <span className="text-sm font-semibold text-center text-text-primary px-2">Add New Card</span>
                                 </div>
@@ -201,16 +201,16 @@ export default function Wallet() {
                 <div className="bg-surface/50 rounded-t-3xl min-h-[400px] border-t border-border backdrop-blur-sm">
                     <div className="px-6 pt-6 pb-4 flex justify-between items-center">
                         <h3 className="text-lg font-bold text-text-primary">Recent Transactions</h3>
-                        <button className="text-sm text-primary font-medium hover:text-primary-dark transition-colors">
+                        <button className="text-sm text-accent font-medium hover:text-accent-dark transition-colors">
                             See All
                         </button>
                     </div>
                     <div className="px-4 space-y-2">
                         {[
-                            { icon: 'movie', name: 'Netflix Subscription', time: 'Today, 09:41 AM', amount: '- €15.99', color: 'text-primary' },
-                            { icon: 'directions_car', name: 'Uber Ride', time: 'Yesterday, 8:30 PM', amount: '- €24.50', color: 'text-primary' },
+                            { icon: 'movie', name: 'Netflix Subscription', time: 'Today, 09:41 AM', amount: '- €15.99', color: 'text-accent' },
+                            { icon: 'directions_car', name: 'Uber Ride', time: 'Yesterday, 8:30 PM', amount: '- €24.50', color: 'text-accent' },
                             { icon: 'account_balance_wallet', name: 'Salary Deposit', time: 'Oct 24, 10:00 AM', amount: '+ €3,200.00', color: 'text-emerald-600 dark:text-emerald-400' },
-                            { icon: 'coffee', name: 'Starbucks Coffee', time: 'Oct 23, 08:15 AM', amount: '- €5.40', color: 'text-primary' },
+                            { icon: 'coffee', name: 'Starbucks Coffee', time: 'Oct 23, 08:15 AM', amount: '- €5.40', color: 'text-accent' },
                         ].map((tx, i) => (
                             <div
                                 key={i}
