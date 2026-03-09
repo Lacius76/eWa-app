@@ -110,9 +110,9 @@ export default function Wallet() {
                             </div>
 
                             {/* Card 2 - Request eWa Card */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-primary/10 to-surface p-4 flex flex-col justify-center items-center shadow-lg backdrop-blur-md border border-primary/30 transform transition-transform hover:scale-[1.02] group text-center relative overflow-hidden">
+                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/10 to-surface p-4 flex flex-col justify-center items-center shadow-lg backdrop-blur-md border border-accent/30 transform transition-transform hover:scale-[1.02] group text-center relative overflow-hidden">
                                 {/* Decorative circle */}
-                                <div className="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-primary/20 blur-xl pointer-events-none"></div>
+                                <div className="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-accent/20 blur-xl pointer-events-none"></div>
                                 <div className="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-accent/20 blur-xl pointer-events-none"></div>
 
                                 <div className="flex flex-col items-center flex-1 justify-center relative z-10 w-full">
@@ -120,7 +120,7 @@ export default function Wallet() {
                                     <p className="text-text-secondary text-xs uppercase tracking-widest mt-1.5 font-medium">prepaid virtual bank card</p>
                                 </div>
 
-                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(6,249,249,0.39)] transition-colors active:scale-[0.98] relative z-10">
+                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(110,0,255,0.39)] transition-colors active:scale-[0.98] relative z-10">
                                     Submit card request
                                 </button>
                             </div>
