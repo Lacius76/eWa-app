@@ -139,7 +139,7 @@ export default function Onboarding() {
 
                     <button
                         onClick={handleNext}
-                        className="group flex w-full h-14 items-center justify-center gap-2 rounded-2xl bg-accent text-[18px] font-semibold text-background shadow-lg shadow-accent/30 transition-all duration-300 hover:bg-accent/90 active:scale-[0.98]"
+                        className="group flex w-full h-14 items-center justify-center gap-2 rounded-2xl bg-accent text-[18px] font-semibold text-white shadow-lg shadow-accent/30 transition-all duration-300 hover:bg-accent/90 active:scale-[0.98]"
                     >
                         {currentScreen < onboardingScreens.length - 1 ? 'Next' : 'Get Started'}
                         <span className="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">

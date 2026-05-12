@@ -49,7 +49,7 @@ export default function Profile() {
                                 className="h-full w-full object-cover"
                             />
                         </div>
-                        <button className="absolute bottom-0 right-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-background shadow-lg border-2 border-background hover:bg-accent-dark transition-colors">
+                        <button className="absolute bottom-0 right-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white shadow-lg border-2 border-background hover:bg-accent-dark transition-colors">
                             <span className="material-symbols-outlined text-sm font-bold">edit</span>
                         </button>
                     </div>

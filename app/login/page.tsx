@@ -118,7 +118,7 @@ export default function Login() {
 
                     {/* Sign In Button */}
                     <button
-                        className="w-full h-14 flex justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-background bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all duration-200 mt-4"
+                        className="w-full h-14 flex justify-center items-center py-4 px-4 border border-transparent rounded-xl shadow-sm text-base font-bold text-white bg-accent hover:bg-accent-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-all duration-200 mt-4"
                         type="submit"
                     >
                         Sign In
