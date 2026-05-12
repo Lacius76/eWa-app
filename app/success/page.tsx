@@ -47,7 +47,7 @@ export default function Success() {
             <div className="w-full max-w-sm space-y-3">
                 <Link
                     href="/dashboard"
-                    className="w-full bg-accent hover:bg-accent-dark text-background font-bold py-4 rounded-xl shadow-neon transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
+                    className="w-full bg-accent hover:bg-accent-dark text-white font-bold py-4 rounded-xl shadow-neon transition-all active:scale-[0.98] flex items-center justify-center gap-2 group"
                 >
                     <span>Back to Home</span>
                     <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">

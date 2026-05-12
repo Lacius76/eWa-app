@@ -120,7 +120,7 @@ export default function Wallet() {
                                     <p className="text-text-secondary text-xs uppercase tracking-widest mt-1.5 font-medium">prepaid virtual bank card</p>
                                 </div>
 
-                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-background text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(110,0,255,0.39)] transition-colors active:scale-[0.98] relative z-10">
+                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(110,0,255,0.39)] transition-colors active:scale-[0.98] relative z-10">
                                     Submit card request
                                 </button>
                             </div>

@@ -221,10 +221,10 @@ export default function Parking() {
                             href="/parking-payment"
                             className="w-full h-14 bg-accent hover:bg-accent-dark active:scale-[0.98] transition-all rounded-xl flex items-center justify-center gap-2 shadow-neon group relative overflow-hidden mb-24"
                         >
-                            <span className="material-symbols-outlined text-background font-bold group-hover:rotate-12 transition-transform">
+                            <span className="material-symbols-outlined text-white font-bold group-hover:rotate-12 transition-transform">
                                 local_parking
                             </span>
-                            <span className="text-background text-lg font-bold tracking-tight">Start Parking</span>
+                            <span className="text-white text-lg font-bold tracking-tight">Start Parking</span>
                         </Link>
                     </div>
                 </div>
