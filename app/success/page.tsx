@@ -11,7 +11,7 @@ export default function Success() {
 
                 {/* Check Icon */}
                 <div className="relative w-32 h-32 rounded-full bg-accent flex items-center justify-center shadow-neon">
-                    <span className="material-symbols-outlined text-background" style={{ fontSize: '64px', fontWeight: 'bold' }}>
+                    <span className="material-symbols-outlined text-white" style={{ fontSize: '64px', fontWeight: 'bold' }}>
                         check
                     </span>
                 </div>

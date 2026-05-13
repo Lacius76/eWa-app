@@ -84,7 +84,7 @@ export default function Wallet() {
                     >
                         <div className="flex gap-4 pb-4 px-6 w-max">
                             {/* Card 1 - Visa Debit */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/20 to-surface p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-border transform transition-transform hover:scale-[1.02] cursor-pointer group">
+                            <Link href="/wallet/card-details" className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/20 to-surface p-6 flex flex-col justify-between shadow-lg backdrop-blur-md border border-border transform transition-transform hover:scale-[1.02] cursor-pointer group block">
                                 <div className="flex justify-between items-start">
                                     <span className="text-text-secondary font-medium text-sm tracking-widest">Debit</span>
                                     <span className="material-symbols-outlined text-text-primary" style={{ fontSize: '28px' }}>
@@ -95,7 +95,7 @@ export default function Wallet() {
                                     <div className="flex items-center gap-3">
                                         <span className="text-2xl font-mono text-text-primary tracking-widest">••••</span>
                                         <span className="text-2xl font-mono text-text-primary tracking-widest">••••</span>
-                                        <span className="text-2xl font-mono text-text-primary tracking-widest">4242</span>
+                                        <span className="text-2xl font-mono text-text-primary tracking-widest">1234</span>
                                     </div>
                                     <div className="flex justify-between items-end">
                                         <div>
@@ -107,26 +107,26 @@ export default function Wallet() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
 
                             {/* Card 2 - Request eWa Card */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/10 to-surface p-4 flex flex-col justify-center items-center shadow-lg backdrop-blur-md border border-accent/30 transform transition-transform hover:scale-[1.02] group text-center relative overflow-hidden">
+                            <Link href="/wallet/ewa-card" className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl bg-gradient-to-br from-accent/10 to-surface p-4 flex flex-col justify-center items-center shadow-lg backdrop-blur-md border border-accent/30 transform transition-transform hover:scale-[1.02] group text-center relative overflow-hidden block">
                                 {/* Decorative circle */}
                                 <div className="absolute top-0 right-0 -mr-8 -mt-8 w-24 h-24 rounded-full bg-accent/20 blur-xl pointer-events-none"></div>
                                 <div className="absolute bottom-0 left-0 -ml-8 -mb-8 w-24 h-24 rounded-full bg-accent/20 blur-xl pointer-events-none"></div>
 
                                 <div className="flex flex-col items-center flex-1 justify-center relative z-10 w-full">
-                                    <h3 className="text-text-primary font-bold text-lg leading-tight tracking-tight mt-1">Request a eWa card</h3>
+                                    <h3 className="text-text-primary font-bold text-lg leading-tight tracking-tight mt-1">Request an eWa card</h3>
                                     <p className="text-text-secondary text-xs uppercase tracking-widest mt-1.5 font-medium">prepaid virtual bank card</p>
                                 </div>
 
-                                <button className="mt-3 w-full py-3 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(110,0,255,0.39)] transition-colors active:scale-[0.98] relative z-10">
+                                <div className="mt-3 w-full py-3 bg-accent group-hover:bg-accent-dark text-white text-sm font-bold rounded-xl shadow-[0_4px_14px_0_rgba(110,0,255,0.39)] transition-colors relative z-10 flex items-center justify-center">
                                     Submit card request
-                                </button>
-                            </div>
+                                </div>
+                            </Link>
 
                             {/* Card 3 - Add New Card */}
-                            <div className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-accent/70 flex flex-col items-center justify-center text-text-secondary hover:text-accent transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group relative p-4">
+                            <Link href="/wallet/add-card" className="snap-start shrink-0 w-[280px] h-[178px] rounded-2xl border-2 border-dashed border-border hover:border-accent/70 flex flex-col items-center justify-center text-text-secondary hover:text-accent transition-all cursor-pointer bg-surface/30 hover:bg-surface/50 group relative p-4 block">
                                 <div className="flex flex-col items-center gap-3 mb-4">
                                     <div className="h-14 w-14 rounded-full bg-accent/10 group-hover:bg-accent/20 flex items-center justify-center transition-all">
                                         <span className="material-symbols-outlined text-4xl text-accent group-hover:scale-110 transition-transform">add</span>
@@ -147,7 +147,7 @@ export default function Wallet() {
                                         <img src="/cards/maestro.svg" alt="Maestro" className="h-full w-full object-contain" />
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     {/* Pagination Dots */}

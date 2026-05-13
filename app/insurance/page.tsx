@@ -43,7 +43,7 @@ export default function Insurance() {
                             </p>
                         </div>
                     </div>
-                    <button className="mt-4 w-full py-2.5 rounded-xl bg-accent text-white text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
+                    <button className="mt-4 w-full py-2.5 rounded-xl bg-accent text-background text-sm font-bold flex items-center justify-center gap-2 shadow-neon active:scale-[0.98] transition-all">
                         <span className="material-symbols-outlined text-lg">add_circle</span>
                         Register Insurance
                     </button>

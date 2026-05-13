@@ -260,6 +260,29 @@ export default function Dashboard() {
             </div>
           </Link>
 
+          {/* Wide Tile: Loyalty Cards */}
+          <Link
+            href="/loyalty"
+            className="col-span-2 relative overflow-hidden rounded-3xl bg-surface p-5 shadow-sm ring-1 ring-border flex flex-row items-center justify-between group h-24 transition-transform active:scale-[0.98]"
+          >
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                <span className="material-symbols-outlined" style={{ fontSize: '28px' }}>
+                  loyalty
+                </span>
+              </div>
+              <div className="flex flex-col">
+                <h4 className="text-base font-bold text-text-primary">Loyalty Cards</h4>
+                <p className="text-xs text-text-secondary">Store cards &amp; rewards</p>
+              </div>
+            </div>
+            <div className="h-8 w-8 rounded-full border border-border flex items-center justify-center">
+              <span className="material-symbols-outlined text-text-secondary" style={{ fontSize: '20px' }}>
+                chevron_right
+              </span>
+            </div>
+          </Link>
+
           {/* Wide Tile: Wallet */}
           <Link
             href="/wallet"

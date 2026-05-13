@@ -49,8 +49,8 @@ export default function Register() {
                     />
                     <defs>
                         <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#06f9f9" />
-                            <stop offset="100%" stopColor="#06f9f9" stopOpacity="0.3" />
+                            <stop offset="0%" stopColor="#2f0155ff" />
+                            <stop offset="100%" stopColor="#270344ff" stopOpacity="0.3" />
                         </linearGradient>
                     </defs>
                 </svg>
